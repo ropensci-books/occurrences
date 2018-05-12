@@ -1,0 +1,5 @@
+# Introduction {#intro}
+
+## What is occurrence data? {#what-occurrences}
+
+Occurrence data is ...
