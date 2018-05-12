@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="intro.html">
-<link rel="next" href="session-info.html">
+<link rel="next" href="rgbif.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -139,9 +139,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="spocc.html"><a href="spocc.html"><i class="fa fa-check"></i><b>3</b> spocc</a><ul>
 <li class="chapter" data-level="3.1" data-path="spocc.html"><a href="spocc.html#what-spocc"><i class="fa fa-check"></i><b>3.1</b> What is spocc?</a></li>
-<li class="chapter" data-level="3.2" data-path="spocc.html"><a href="spocc.html#basic-example"><i class="fa fa-check"></i><b>3.2</b> Basic example</a></li>
+<li class="chapter" data-level="3.2" data-path="spocc.html"><a href="spocc.html#spocc-basic-example"><i class="fa fa-check"></i><b>3.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>4</b> session info</a></li>
+<li class="chapter" data-level="4" data-path="rgbif.html"><a href="rgbif.html"><i class="fa fa-check"></i><b>4</b> rgbif</a><ul>
+<li class="chapter" data-level="4.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>4.1</b> What is rgbif?</a></li>
+<li class="chapter" data-level="4.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>4.2</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>5</b> session info</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ropenscilabs/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
 
@@ -169,7 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a href="https://github.com/ropensci/spocc">spocc</a> is an R package that is a single user interface to occurrence data.</p>
 <p><code>spocc</code> currently interfaces with ten major biodiversity repositories</p>
 <ol style="list-style-type: decimal">
-<li><a href="https://github.com/ropensci/rgbif">Global Biodiversity Information Facility (GBIF)</a> (via <code>rgbif</code>)</li>
+<li><a href="https://www.gbif.org/">Global Biodiversity Information Facility (GBIF)</a> (via <code>rgbif</code>)</li>
 <li><a href="https://github.com/ropensci/ecoengine">Berkeley Ecoengine</a> (via <code>ecoengine</code>)</li>
 <li><a href="https://github.com/ropensci/rinat">iNaturalist</a></li>
 <li><a href="https://github.com/ropensci/rvertnet">VertNet</a> (via <code>rvertnet</code>)</li>
@@ -181,7 +185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="http://www.ala.org.au/">Atlas of Living Australia</a></li>
 </ol>
 </div>
-<div id="basic-example" class="section level2">
+<div id="spocc-basic-example" class="section level2">
 <h2><span class="header-section-number">3.2</span> Basic example</h2>
 <p>Load <code>spocc</code> and request data for a given taxonomic name, for each of three different data sources, specify options across all data sources (e.g., <code>limit</code> number of records), and options for specific data sources (using <code>gbifopts = list()</code>, etc. for each data source).</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(spocc)</a>
@@ -284,7 +288,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="session-info.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rgbif.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

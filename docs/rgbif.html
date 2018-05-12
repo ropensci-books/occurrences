@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>occurrence manual</title>
+  <meta name="description" content="occurrence manual">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="occurrence manual" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="occurrence manual" />
+  <meta name="github-repo" content="ropenscilabs/occurrence-manual" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="occurrence manual" />
+  
+  <meta name="twitter:description" content="occurrence manual" />
+  
+
+<meta name="author" content="built w/ rgbif v0.9.9.9528 / spocc v0.7.0 / rbison v0.6.0">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="spocc.html">
+<link rel="next" href="session-info.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Working with biological ccurrence data</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> occurrence manual</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#info"><i class="fa fa-check"></i><b>1.1</b> Info</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-occurrences"><i class="fa fa-check"></i><b>2.1</b> What is occurrence data?</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="spocc.html"><a href="spocc.html"><i class="fa fa-check"></i><b>3</b> spocc</a><ul>
+<li class="chapter" data-level="3.1" data-path="spocc.html"><a href="spocc.html#what-spocc"><i class="fa fa-check"></i><b>3.1</b> What is spocc?</a></li>
+<li class="chapter" data-level="3.2" data-path="spocc.html"><a href="spocc.html#spocc-basic-example"><i class="fa fa-check"></i><b>3.2</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rgbif.html"><a href="rgbif.html"><i class="fa fa-check"></i><b>4</b> rgbif</a><ul>
+<li class="chapter" data-level="4.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>4.1</b> What is rgbif?</a></li>
+<li class="chapter" data-level="4.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>4.2</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>5</b> session info</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/ropenscilabs/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">occurrence manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rgbif" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> rgbif</h1>
+<div id="what-rgbif" class="section level2">
+<h2><span class="header-section-number">4.1</span> What is rgbif?</h2>
+<p><a href="https://github.com/ropensci/rgbif">rgbif</a> is an R package that interfaces with the GBIF (Global Biodiversity Information Facility) API (Application Programming Interface).</p>
+<p><code>rgbif</code> has the following methods</p>
+<ul>
+<li><code>registry</code> (<a href="https://www.gbif.org/developer/registry" class="uri">https://www.gbif.org/developer/registry</a>) - Metadata on datasets, and
+contributing organizations, installations, networks, and nodes
+<ul>
+<li><code>rgbif</code> functions: <code>dataset_metrics()</code>, <code>dataset_search()</code>, <code>dataset_suggest()</code>,
+<code>datasets()</code>, <code>enumeration()</code>, <code>enumeration_country()</code>, <code>installations()</code>, <code>networks()</code>,
+<code>nodes()</code>, <code>organizations()</code></li>
+<li>Registry also includes the GBIF OAI-PMH service, which includes GBIF registry
+data only. <code>rgbif</code> functions: <code>gbif_oai_get_records()</code>, <code>gbif_oai_identify()</code>,
+<code>gbif_oai_list_identifiers()</code>, <code>gbif_oai_list_metadataformats()</code>,
+<code>gbif_oai_list_records()</code>, <code>gbif_oai_list_sets()</code></li>
+</ul></li>
+<li><code>species</code> (<a href="https://www.gbif.org/developer/species" class="uri">https://www.gbif.org/developer/species</a>) - Species names and metadata
+<ul>
+<li><code>rgbif</code> functions: <code>name_backbone()</code>, <code>name_lookup()</code>, <code>name_suggest()</code>, <code>name_usage()</code></li>
+</ul></li>
+<li><code>occurrences</code> (<a href="https://www.gbif.org/developer/occurrence" class="uri">https://www.gbif.org/developer/occurrence</a>) - Occurrences, both for
+the search and download APIs
+<ul>
+<li><code>rgbif</code> functions: <code>occ_count()</code>, <code>occ_data()</code>, <code>occ_download()</code>, <code>occ_download_cancel()</code>,
+<code>occ_download_cancel_staged()</code>, <code>occ_download_get()</code>, <code>occ_download_import()</code>,
+<code>occ_download_list()</code>, <code>occ_download_meta()</code>, <code>occ_get()</code>, <code>occ_issues()</code>,
+<code>occ_issues_lookup()</code>, <code>occ_metadata()</code>, <code>occ_search()</code></li>
+</ul></li>
+<li><code>maps</code> (<a href="https://www.gbif.org/developer/maps" class="uri">https://www.gbif.org/developer/maps</a>) - Map API
+<ul>
+<li><code>rgbif</code> functions: <code>map_fetch()</code></li>
+<li>Note: we used to have a function <code>gbifmap()</code> that used <code>ggplot2</code> to plot data from the
+occurrence API, but it’s been removed - see package [mapr][]</li>
+</ul></li>
+</ul>
+</div>
+<div id="rgbif-basic-example" class="section level2">
+<h2><span class="header-section-number">4.2</span> Basic example</h2>
+<p>Load <code>rgbif</code> xxx</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">library</span>(rgbif)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">splist &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Accipiter erythronemius&#39;</span>, <span class="st">&#39;Junco hyemalis&#39;</span>, <span class="st">&#39;Aix sponsa&#39;</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">keys &lt;-<span class="st"> </span><span class="kw">vapply</span>(splist, <span class="cf">function</span>(x) <span class="kw">name_backbone</span>(<span class="dt">name =</span> x)<span class="op">$</span>speciesKey, <span class="kw">integer</span>(<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">occ_search</span>(<span class="dt">taxonKey =</span> keys, <span class="dt">limit =</span> <span class="dv">5</span>, <span class="dt">hasCoordinate =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">## Occ. found [2480598 (16), 9362842 (3799701), 2498387 (1243118)] </a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">## Occ. returned [2480598 (5), 9362842 (5), 2498387 (5)] </a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">## No. unique hierarchies [2480598 (1), 9362842 (1), 2498387 (1)] </a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">## No. media records [2480598 (1), 9362842 (5), 2498387 (4)] </a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">## No. facets [2480598 (0), 9362842 (0), 2498387 (0)] </a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">## Args [hasCoordinate=TRUE, limit=5, offset=0,</a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">##      taxonKey=2480598,9362842,2498387, fields=all] </a>
+<a class="sourceLine" id="cb7-11" data-line-number="11">## 3 requests; First 10 rows of data from 2480598</a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">## </a>
+<a class="sourceLine" id="cb7-13" data-line-number="13">## # A tibble: 5 x 80</a>
+<a class="sourceLine" id="cb7-14" data-line-number="14">##   name         key decimalLatitude decimalLongitude issues   datasetKey   </a>
+<a class="sourceLine" id="cb7-15" data-line-number="15">##   &lt;chr&gt;      &lt;int&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;        </a>
+<a class="sourceLine" id="cb7-16" data-line-number="16">## 1 Accipit…  1.00e9          -27.6             -58.7 bri,cud… ad43e954-dd7…</a>
+<a class="sourceLine" id="cb7-17" data-line-number="17">## 2 Accipit…  1.00e9          -27.9             -59.1 bri,cud… ad43e954-dd7…</a>
+<a class="sourceLine" id="cb7-18" data-line-number="18">## 3 Accipit…  6.86e8            5.27            -60.7 cdround  e635240a-3cb…</a>
+<a class="sourceLine" id="cb7-19" data-line-number="19">## 4 Accipit…  1.00e9          -27.6             -58.7 bri,cud… ad43e954-dd7…</a>
+<a class="sourceLine" id="cb7-20" data-line-number="20">## 5 Accipit…  1.00e9          -27.6             -58.7 bri,cud… ad43e954-dd7…</a>
+<a class="sourceLine" id="cb7-21" data-line-number="21">## # ... with 74 more variables: publishingOrgKey &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-22" data-line-number="22">## #   publishingCountry &lt;chr&gt;, protocol &lt;chr&gt;, lastCrawled &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-23" data-line-number="23">## #   lastParsed &lt;chr&gt;, crawlId &lt;int&gt;, extensions &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-24" data-line-number="24">## #   basisOfRecord &lt;chr&gt;, taxonKey &lt;int&gt;, kingdomKey &lt;int&gt;,</a>
+<a class="sourceLine" id="cb7-25" data-line-number="25">## #   phylumKey &lt;int&gt;, classKey &lt;int&gt;, orderKey &lt;int&gt;, familyKey &lt;int&gt;,</a>
+<a class="sourceLine" id="cb7-26" data-line-number="26">## #   genusKey &lt;int&gt;, speciesKey &lt;int&gt;, scientificName &lt;chr&gt;, kingdom &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-27" data-line-number="27">## #   phylum &lt;chr&gt;, order &lt;chr&gt;, family &lt;chr&gt;, genus &lt;chr&gt;, species &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-28" data-line-number="28">## #   genericName &lt;chr&gt;, specificEpithet &lt;chr&gt;, taxonRank &lt;chr&gt;, year &lt;int&gt;,</a>
+<a class="sourceLine" id="cb7-29" data-line-number="29">## #   month &lt;int&gt;, day &lt;int&gt;, eventDate &lt;chr&gt;, modified &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-30" data-line-number="30">## #   lastInterpreted &lt;chr&gt;, license &lt;chr&gt;, identifiers &lt;chr&gt;, facts &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-31" data-line-number="31">## #   relations &lt;chr&gt;, geodeticDatum &lt;chr&gt;, class &lt;chr&gt;, countryCode &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-32" data-line-number="32">## #   country &lt;chr&gt;, identifier &lt;chr&gt;, created &lt;chr&gt;, gbifID &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-33" data-line-number="33">## #   associatedSequences &lt;chr&gt;, occurrenceID &lt;chr&gt;, taxonID &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-34" data-line-number="34">## #   higherClassification &lt;chr&gt;, sex &lt;chr&gt;, establishmentMeans &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-35" data-line-number="35">## #   continent &lt;chr&gt;, references &lt;chr&gt;, institutionID &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-36" data-line-number="36">## #   dynamicProperties &lt;chr&gt;, fieldNumber &lt;chr&gt;, language &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-37" data-line-number="37">## #   type &lt;chr&gt;, preparations &lt;chr&gt;, occurrenceStatus &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-38" data-line-number="38">## #   catalogNumber &lt;chr&gt;, institutionCode &lt;chr&gt;, verbatimEventDate &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-39" data-line-number="39">## #   higherGeography &lt;chr&gt;, nomenclaturalCode &lt;chr&gt;, endDayOfYear &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-40" data-line-number="40">## #   georeferenceVerificationStatus &lt;chr&gt;, datasetName &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-41" data-line-number="41">## #   locality &lt;chr&gt;, collectionCode &lt;chr&gt;, verbatimLocality &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-42" data-line-number="42">## #   recordedBy &lt;chr&gt;, otherCatalogNumbers &lt;chr&gt;, startDayOfYear &lt;chr&gt;,</a>
+<a class="sourceLine" id="cb7-43" data-line-number="43">## #   accessRights &lt;chr&gt;, collectionID &lt;chr&gt;</a></code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="spocc.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="session-info.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ropenscilabs/occurrence-manual/edit/master/03-rgbif.Rmd",
+"text": "Edit"
+},
+"download": ["_main.pdf", "_main.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

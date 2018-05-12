@@ -1,0 +1,47 @@
+# rgbif {#rgbif}
+
+## What is rgbif? {#what-rgbif}
+
+[rgbif][] is an R package that interfaces with the GBIF (Global Biodiversity Information Facility) API (Application Programming Interface).
+
+`rgbif` has the following methods
+
+* `registry` (<https://www.gbif.org/developer/registry>) - Metadata on datasets, and
+contributing organizations, installations, networks, and nodes
+    * `rgbif` functions: `dataset_metrics()`, `dataset_search()`, `dataset_suggest()`,
+    `datasets()`, `enumeration()`, `enumeration_country()`, `installations()`, `networks()`,
+    `nodes()`, `organizations()`
+    * Registry also includes the GBIF OAI-PMH service, which includes GBIF registry
+    data only. `rgbif` functions: `gbif_oai_get_records()`, `gbif_oai_identify()`,
+    `gbif_oai_list_identifiers()`, `gbif_oai_list_metadataformats()`,
+    `gbif_oai_list_records()`, `gbif_oai_list_sets()`
+* `species` (<https://www.gbif.org/developer/species>) - Species names and metadata
+    * `rgbif` functions: `name_backbone()`, `name_lookup()`, `name_suggest()`, `name_usage()`
+* `occurrences` (<https://www.gbif.org/developer/occurrence>) - Occurrences, both for
+the search and download APIs
+    * `rgbif` functions: `occ_count()`, `occ_data()`, `occ_download()`, `occ_download_cancel()`,
+    `occ_download_cancel_staged()`, `occ_download_get()`, `occ_download_import()`,
+    `occ_download_list()`, `occ_download_meta()`, `occ_get()`, `occ_issues()`,
+    `occ_issues_lookup()`, `occ_metadata()`, `occ_search()`
+* `maps` (<https://www.gbif.org/developer/maps>) - Map API
+    * `rgbif` functions: `map_fetch()`
+    * Note: we used to have a function `gbifmap()` that used `ggplot2` to plot data from the
+    occurrence API, but it's been removed - see package [mapr][]
+
+## Basic example {#rgbif-basic-example}
+
+Load `rgbif` xxx
+
+```{r}
+library(rgbif)
+```
+
+```{r collapse = TRUE}
+splist <- c('Accipiter erythronemius', 'Junco hyemalis', 'Aix sponsa')
+keys <- vapply(splist, function(x) name_backbone(name = x)$speciesKey, integer(1))
+occ_search(taxonKey = keys, limit = 5, hasCoordinate = TRUE)
+
+```
+
+[spocc]: https://github.com/ropensci/spocc
+[rgbif]: https://github.com/ropensci/rgbif

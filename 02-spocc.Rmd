@@ -17,7 +17,7 @@
 9. [OBIS][obis]
 10. [Atlas of Living Australia][ala]
 
-## Basic example {#basic-example}
+## Basic example {#spocc-basic-example}
 
 Load `spocc` and request data for a given taxonomic name, for each of three different data sources, specify options across all data sources (e.g., `limit` number of records), and options for specific data sources (using `gbifopts = list()`, etc. for each data source).
 
@@ -45,7 +45,8 @@ out$inat
 ```
 
 [spocc]: https://github.com/ropensci/spocc
-[gbif]: https://github.com/ropensci/rgbif
+[gbif]: https://www.gbif.org/
+[rgbif]: https://github.com/ropensci/rgbif
 [vertnet]: https://github.com/ropensci/rvertnet
 [bison]: https://github.com/ropensci/rbison
 [inat]: https://github.com/ropensci/rinat
