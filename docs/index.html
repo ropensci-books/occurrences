@@ -132,13 +132,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> occurrence manual</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#info"><i class="fa fa-check"></i><b>1.1</b> Info</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#citing-the-packages"><i class="fa fa-check"></i><b>1.2</b> Citing the packages</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#installation"><i class="fa fa-check"></i><b>1.3</b> Installation</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#installation"><i class="fa fa-check"></i><b>1.2</b> Installation</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#what-occurrences"><i class="fa fa-check"></i><b>2.1</b> What is occurrence data?</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>3</b> session info</a></li>
+<li class="chapter" data-level="3" data-path="spocc.html"><a href="spocc.html"><i class="fa fa-check"></i><b>3</b> spocc</a><ul>
+<li class="chapter" data-level="3.1" data-path="spocc.html"><a href="spocc.html#what-spocc"><i class="fa fa-check"></i><b>3.1</b> What is spocc?</a></li>
+<li class="chapter" data-level="3.2" data-path="spocc.html"><a href="spocc.html#basic-example"><i class="fa fa-check"></i><b>3.2</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>4</b> session info</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ropenscilabs/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
 
@@ -162,7 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">occurrence manual</h1>
 <h4 class="author"><em>built w/ rgbif v0.9.9.9528 / spocc v0.7.0 / rbison v0.6.0</em></h4>
-<h4 class="date"><em>built on 2018-05-11</em></h4>
+<h4 class="date"><em>built on 2018-05-12</em></h4>
 </div>
 <div id="occurrence-manual" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> occurrence manual</h1>
@@ -170,24 +173,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="info" class="section level2">
 <h2><span class="header-section-number">1.1</span> Info</h2>
 <ul>
-<li>Code: <a href="https://github.com/ropensci/http-testing-book/" class="uri">https://github.com/ropensci/http-testing-book/</a></li>
-<li>Issues/Bug reports: <a href="https://github.com/ropensci/http-testing-book/issues" class="uri">https://github.com/ropensci/http-testing-book/issues</a></li>
+<li>Code: <a href="https://github.com/ropenscilabs/occurrence-manual/" class="uri">https://github.com/ropenscilabs/occurrence-manual/</a></li>
+<li>Issues/Bug reports: Go to issue trackers for each package</li>
 </ul>
 <p>Packages</p>
 <ul>
-<li><code>rgbif</code>: <a href="https://cran.rstudio.com/web/packages/crul/" class="uri">https://cran.rstudio.com/web/packages/crul/</a></li>
+<li><code>rgbif</code>: <a href="https://cran.rstudio.com/web/packages/rgbif/" class="uri">https://cran.rstudio.com/web/packages/rgbif/</a></li>
 <li><code>spocc</code>: <a href="https://cran.rstudio.com/web/packages/spocc/" class="uri">https://cran.rstudio.com/web/packages/spocc/</a></li>
-<li><code>rbison</code>: <a href="https://github.com/ropensci/rbison/" class="uri">https://github.com/ropensci/rbison/</a></li>
+<li><code>rbison</code>: <a href="https://cran.rstudio.com/web/packages/rbison/" class="uri">https://cran.rstudio.com/web/packages/rbison/</a></li>
+<li><code>rvertnet</code>: <a href="https://cran.rstudio.com/web/packages/rvertnet/" class="uri">https://cran.rstudio.com/web/packages/rvertnet/</a></li>
+<li><code>ecoengine</code>: <a href="https://cran.rstudio.com/web/packages/ecoengine/" class="uri">https://cran.rstudio.com/web/packages/ecoengine/</a></li>
+<li><code>AntWeb</code>: <a href="https://cran.rstudio.com/web/packages/AntWeb/" class="uri">https://cran.rstudio.com/web/packages/AntWeb/</a></li>
 </ul>
 </div>
-<div id="citing-the-packages" class="section level2">
-<h2><span class="header-section-number">1.2</span> Citing the packages</h2>
-<p>xxxx</p>
-</div>
 <div id="installation" class="section level2">
-<h2><span class="header-section-number">1.3</span> Installation</h2>
+<h2><span class="header-section-number">1.2</span> Installation</h2>
 <p>Stable version from CRAN</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;rgbif&quot;</span>, <span class="st">&quot;spocc&quot;</span>, <span class="st">&quot;rbison&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;rgbif&quot;</span>, <span class="st">&quot;spocc&quot;</span>, <span class="st">&quot;rbison&quot;</span>, <span class="st">&quot;rvertnet&quot;</span>, <span class="st">&quot;ecoengine&quot;</span>, <span class="st">&quot;AntWeb&quot;</span>))</a></code></pre></div>
 
 </div>
 </div>

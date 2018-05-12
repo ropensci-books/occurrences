@@ -11,6 +11,9 @@ github-repo: ropenscilabs/occurrence-manual
 description: "occurrence manual"
 ---
 
+```{r echo=FALSE, results="hide"}
+occ_pkgs <- c("rgbif", "spocc", "rbison", "rvertnet", "ecoengine", "AntWeb")
+```
 
 # occurrence manual
 
@@ -18,23 +21,24 @@ write some stuff ...
 
 ## Info
 
-* Code: <https://github.com/ropensci/http-testing-book/>
-* Issues/Bug reports: <https://github.com/ropensci/http-testing-book/issues>
+* Code: <https://github.com/ropenscilabs/occurrence-manual/>
+* Issues/Bug reports: Go to issue trackers for each package
 
 Packages
 
-* `rgbif`: <https://cran.rstudio.com/web/packages/crul/>
+* `rgbif`: <https://cran.rstudio.com/web/packages/rgbif/>
 * `spocc`: <https://cran.rstudio.com/web/packages/spocc/>
-* `rbison`: <https://github.com/ropensci/rbison/>
+* `rbison`: <https://cran.rstudio.com/web/packages/rbison/>
+* `rvertnet`: <https://cran.rstudio.com/web/packages/rvertnet/>
+* `ecoengine`: <https://cran.rstudio.com/web/packages/ecoengine/>
+* `AntWeb`: <https://cran.rstudio.com/web/packages/AntWeb/>
 
-## Citing the packages
-
-xxxx
 
 ## Installation
 
 Stable version from CRAN
 
 ```{r eval=FALSE}
-install.packages(c("rgbif", "spocc", "rbison"))
+install.packages(c("rgbif", "spocc", "rbison", "rvertnet", "ecoengine", "AntWeb"))
+
 ```
