@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="intro.html">
-<link rel="next" href="rgbif.html">
+<link rel="next" href="working-with-data.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -141,11 +141,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="spocc.html"><a href="spocc.html#what-spocc"><i class="fa fa-check"></i><b>3.1</b> What is spocc?</a></li>
 <li class="chapter" data-level="3.2" data-path="spocc.html"><a href="spocc.html#spocc-basic-example"><i class="fa fa-check"></i><b>3.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rgbif.html"><a href="rgbif.html"><i class="fa fa-check"></i><b>4</b> rgbif</a><ul>
-<li class="chapter" data-level="4.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>4.1</b> What is rgbif?</a></li>
-<li class="chapter" data-level="4.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>4.2</b> Basic example</a></li>
+<li class="chapter" data-level="4" data-path="working-with-data.html"><a href="working-with-data.html"><i class="fa fa-check"></i><b>4</b> Working with occurrence data</a></li>
+<li class="chapter" data-level="5" data-path="rgbif.html"><a href="rgbif.html"><i class="fa fa-check"></i><b>5</b> rgbif</a><ul>
+<li class="chapter" data-level="5.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>5.1</b> What is rgbif?</a></li>
+<li class="chapter" data-level="5.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>5.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>5</b> session info</a></li>
+<li class="chapter" data-level="6" data-path="cleaning.html"><a href="cleaning.html"><i class="fa fa-check"></i><b>6</b> Cleaning occurrence data</a></li>
+<li class="chapter" data-level="7" data-path="use-cases.html"><a href="use-cases.html"><i class="fa fa-check"></i><b>7</b> Use cases</a></li>
+<li class="chapter" data-level="8" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>8</b> session info</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ropenscilabs/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
 
@@ -250,9 +253,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb5-5" data-line-number="5">## # A tibble: 3 x 71</a>
 <a class="sourceLine" id="cb5-6" data-line-number="6">##   name   longitude latitude prov      id observed_on description map_scale</a>
 <a class="sourceLine" id="cb5-7" data-line-number="7">##   &lt;chr&gt;  &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt; &lt;date&gt;      &lt;chr&gt;           &lt;int&gt;</a>
-<a class="sourceLine" id="cb5-8" data-line-number="8">## 1 Setop… -83.2117… 41.6123… inat  1.24e7 2018-05-11  &lt;NA&gt;               NA</a>
-<a class="sourceLine" id="cb5-9" data-line-number="9">## 2 Setop… -74.6515… 40.3218… inat  1.24e7 2018-05-12  Seen and h…        NA</a>
-<a class="sourceLine" id="cb5-10" data-line-number="10">## 3 Setop… -80.3281… 25.7637… inat  1.24e7 2018-04-25  &lt;NA&gt;               NA</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">## 1 Setop… -82.5102… 41.9223… inat  1.24e7 2018-05-10  &quot;&quot;                 NA</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">## 2 Setop… -78.8553… 42.8488… inat  1.24e7 2018-05-12  &quot;&quot;                 NA</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">## 3 Setop… -83.2117… 41.6123… inat  1.24e7 2018-05-11  &lt;NA&gt;               NA</a>
 <a class="sourceLine" id="cb5-11" data-line-number="11">## # ... with 63 more variables: timeframe &lt;lgl&gt;, species_guess &lt;chr&gt;,</a>
 <a class="sourceLine" id="cb5-12" data-line-number="12">## #   user_id &lt;int&gt;, taxon_id &lt;int&gt;, created_at &lt;chr&gt;, updated_at &lt;chr&gt;,</a>
 <a class="sourceLine" id="cb5-13" data-line-number="13">## #   place_guess &lt;chr&gt;, id_please &lt;lgl&gt;, observed_on_string &lt;chr&gt;,</a>
@@ -288,7 +291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="rgbif.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="working-with-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

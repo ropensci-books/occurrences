@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="rgbif.html">
+<link rel="prev" href="use-cases.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -141,11 +141,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="spocc.html"><a href="spocc.html#what-spocc"><i class="fa fa-check"></i><b>3.1</b> What is spocc?</a></li>
 <li class="chapter" data-level="3.2" data-path="spocc.html"><a href="spocc.html#spocc-basic-example"><i class="fa fa-check"></i><b>3.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rgbif.html"><a href="rgbif.html"><i class="fa fa-check"></i><b>4</b> rgbif</a><ul>
-<li class="chapter" data-level="4.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>4.1</b> What is rgbif?</a></li>
-<li class="chapter" data-level="4.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>4.2</b> Basic example</a></li>
+<li class="chapter" data-level="4" data-path="working-with-data.html"><a href="working-with-data.html"><i class="fa fa-check"></i><b>4</b> Working with occurrence data</a></li>
+<li class="chapter" data-level="5" data-path="rgbif.html"><a href="rgbif.html"><i class="fa fa-check"></i><b>5</b> rgbif</a><ul>
+<li class="chapter" data-level="5.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>5.1</b> What is rgbif?</a></li>
+<li class="chapter" data-level="5.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>5.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>5</b> session info</a></li>
+<li class="chapter" data-level="6" data-path="cleaning.html"><a href="cleaning.html"><i class="fa fa-check"></i><b>6</b> Cleaning occurrence data</a></li>
+<li class="chapter" data-level="7" data-path="use-cases.html"><a href="use-cases.html"><i class="fa fa-check"></i><b>7</b> Use cases</a></li>
+<li class="chapter" data-level="8" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>8</b> session info</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ropenscilabs/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
 
@@ -167,7 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="session-info" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> session info</h1>
+<h1><span class="header-section-number">Chapter 8</span> session info</h1>
 <p>Session info for this book</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">sessioninfo<span class="op">::</span><span class="kw">session_info</span>()</a></code></pre></div>
 <pre><code>#&gt; ─ Session info ──────────────────────────────────────────────────────────
@@ -185,8 +188,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 #&gt;  package     * version    date       source                            
 #&gt;  assertthat    0.2.0      2017-04-11 CRAN (R 3.5.0)                    
 #&gt;  backports     1.1.2      2017-12-13 CRAN (R 3.5.0)                    
-#&gt;  bindr         0.1 (!)    2018-03-13 CRAN (R 3.5.0)                    
-#&gt;  bindrcpp      0.2 (!)    2018-03-29 CRAN (R 3.5.0)                    
+#&gt;  bindr         0.1.1      2018-03-13 CRAN (R 3.5.0)                    
+#&gt;  bindrcpp      0.2.2      2018-03-29 CRAN (R 3.5.0)                    
 #&gt;  bookdown    * 0.7        2018-02-18 CRAN (R 3.5.0)                    
 #&gt;  cli           1.0.0      2017-11-05 CRAN (R 3.5.0)                    
 #&gt;  clisymbols    1.2.0      2017-05-21 CRAN (R 3.5.0)                    
@@ -196,7 +199,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 #&gt;  curl          3.2        2018-03-28 CRAN (R 3.5.0)                    
 #&gt;  data.table    1.11.2     2018-05-08 CRAN (R 3.5.0)                    
 #&gt;  digest        0.6.15     2018-01-28 CRAN (R 3.5.0)                    
-#&gt;  dplyr         0.7.3 (!)  2017-09-28 CRAN (R 3.5.0)                    
+#&gt;  dplyr         0.7.4      2017-09-28 CRAN (R 3.5.0)                    
 #&gt;  evaluate      0.10.1     2017-06-24 CRAN (R 3.5.0)                    
 #&gt;  geoaxe        0.1.0      2016-02-19 CRAN (R 3.5.0)                    
 #&gt;  ggplot2       2.2.1      2016-12-30 CRAN (R 3.5.0)                    
@@ -252,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="rgbif.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="use-cases.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
