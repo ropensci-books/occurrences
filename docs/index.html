@@ -14,7 +14,7 @@
   
   
   <meta property="og:description" content="occurrence manual" />
-  <meta name="github-repo" content="ropenscilabs/occurrence-manual" />
+  <meta name="github-repo" content="ropensci/occurrence-manual" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="occurrence manual" />
@@ -22,7 +22,7 @@
   <meta name="twitter:description" content="occurrence manual" />
   
 
-<meta name="author" content="built w/ rgbif v0.9.9.9528 / spocc v0.7.0 / rbison v0.6.0">
+<meta name="author" content="built w/ rgbif v1.0.4.9100 / spocc v0.8.1.9100 / rbison v0.6.0.9121">
 
 
 
@@ -51,7 +51,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -64,13 +64,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
   { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -141,16 +139,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="spocc.html"><a href="spocc.html#what-spocc"><i class="fa fa-check"></i><b>3.1</b> What is spocc?</a></li>
 <li class="chapter" data-level="3.2" data-path="spocc.html"><a href="spocc.html#spocc-basic-example"><i class="fa fa-check"></i><b>3.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="working-with-data.html"><a href="working-with-data.html"><i class="fa fa-check"></i><b>4</b> Working with occurrence data</a></li>
-<li class="chapter" data-level="5" data-path="rgbif.html"><a href="rgbif.html"><i class="fa fa-check"></i><b>5</b> rgbif</a><ul>
-<li class="chapter" data-level="5.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>5.1</b> What is rgbif?</a></li>
-<li class="chapter" data-level="5.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>5.2</b> Basic example</a></li>
+<li class="chapter" data-level="4" data-path="rgbif.html"><a href="rgbif.html"><i class="fa fa-check"></i><b>4</b> rgbif</a><ul>
+<li class="chapter" data-level="4.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>4.1</b> What is rgbif?</a></li>
+<li class="chapter" data-level="4.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>4.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="cleaning.html"><a href="cleaning.html"><i class="fa fa-check"></i><b>6</b> Cleaning occurrence data</a></li>
-<li class="chapter" data-level="7" data-path="use-cases.html"><a href="use-cases.html"><i class="fa fa-check"></i><b>7</b> Use cases</a></li>
-<li class="chapter" data-level="8" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>8</b> session info</a></li>
+<li class="chapter" data-level="5" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>5</b> session info</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/ropenscilabs/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
+<li><a href="https://github.com/ropensci/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
 
 </ul>
 
@@ -171,8 +166,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">occurrence manual</h1>
-<h4 class="author"><em>built w/ rgbif v0.9.9.9528 / spocc v0.7.0 / rbison v0.6.0</em></h4>
-<h4 class="date"><em>built on 2018-05-12</em></h4>
+<h4 class="author"><em>built w/ rgbif v1.0.4.9100 / spocc v0.8.1.9100 / rbison v0.6.0.9121</em></h4>
+<h4 class="date"><em>built on 2018-10-10</em></h4>
 </div>
 <div id="occurrence-manual" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> occurrence manual</h1>
@@ -180,7 +175,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="info" class="section level2">
 <h2><span class="header-section-number">1.1</span> Info</h2>
 <ul>
-<li>Code: <a href="https://github.com/ropenscilabs/occurrence-manual/" class="uri">https://github.com/ropenscilabs/occurrence-manual/</a></li>
+<li>Code: <a href="https://github.com/ropensci/occurrence-manual/" class="uri">https://github.com/ropensci/occurrence-manual/</a></li>
 <li>Issues/Bug reports: Go to issue trackers for each package</li>
 </ul>
 <p>Packages</p>
@@ -236,7 +231,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ropenscilabs/occurrence-manual/edit/master/index.Rmd",
+"link": "https://github.com/ropensci/occurrence-manual/edit/master/index.Rmd",
 "text": "Edit"
 },
 "download": ["_main.pdf", "_main.epub"],

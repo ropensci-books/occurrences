@@ -14,7 +14,7 @@
   
   
   <meta property="og:description" content="occurrence manual" />
-  <meta name="github-repo" content="ropenscilabs/occurrence-manual" />
+  <meta name="github-repo" content="ropensci/occurrence-manual" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="occurrence manual" />
@@ -22,7 +22,7 @@
   <meta name="twitter:description" content="occurrence manual" />
   
 
-<meta name="author" content="built w/ rgbif v0.9.9.9528 / spocc v0.7.0 / rbison v0.6.0">
+<meta name="author" content="built w/ rgbif v1.0.4.9100 / spocc v0.8.1.9100 / rbison v0.6.0.9121">
 
 
 
@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="use-cases.html">
+<link rel="prev" href="rgbif.html">
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,7 +51,7 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -64,13 +64,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
   { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -141,16 +139,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="spocc.html"><a href="spocc.html#what-spocc"><i class="fa fa-check"></i><b>3.1</b> What is spocc?</a></li>
 <li class="chapter" data-level="3.2" data-path="spocc.html"><a href="spocc.html#spocc-basic-example"><i class="fa fa-check"></i><b>3.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="working-with-data.html"><a href="working-with-data.html"><i class="fa fa-check"></i><b>4</b> Working with occurrence data</a></li>
-<li class="chapter" data-level="5" data-path="rgbif.html"><a href="rgbif.html"><i class="fa fa-check"></i><b>5</b> rgbif</a><ul>
-<li class="chapter" data-level="5.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>5.1</b> What is rgbif?</a></li>
-<li class="chapter" data-level="5.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>5.2</b> Basic example</a></li>
+<li class="chapter" data-level="4" data-path="rgbif.html"><a href="rgbif.html"><i class="fa fa-check"></i><b>4</b> rgbif</a><ul>
+<li class="chapter" data-level="4.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>4.1</b> What is rgbif?</a></li>
+<li class="chapter" data-level="4.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>4.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="cleaning.html"><a href="cleaning.html"><i class="fa fa-check"></i><b>6</b> Cleaning occurrence data</a></li>
-<li class="chapter" data-level="7" data-path="use-cases.html"><a href="use-cases.html"><i class="fa fa-check"></i><b>7</b> Use cases</a></li>
-<li class="chapter" data-level="8" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>8</b> session info</a></li>
+<li class="chapter" data-level="5" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>5</b> session info</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/ropenscilabs/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
+<li><a href="https://github.com/ropensci/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
 
 </ul>
 
@@ -170,84 +165,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="session-info" class="section level1">
-<h1><span class="header-section-number">Chapter 8</span> session info</h1>
+<h1><span class="header-section-number">Chapter 5</span> session info</h1>
 <p>Session info for this book</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">sessioninfo<span class="op">::</span><span class="kw">session_info</span>()</a></code></pre></div>
+<pre><code>#&gt; Warning: &#39;DESCRIPTION&#39; file has an &#39;Encoding&#39; field and re-encoding is not
+#&gt; possible
+
+#&gt; Warning: &#39;DESCRIPTION&#39; file has an &#39;Encoding&#39; field and re-encoding is not
+#&gt; possible
+
+#&gt; Warning: &#39;DESCRIPTION&#39; file has an &#39;Encoding&#39; field and re-encoding is not
+#&gt; possible</code></pre>
 <pre><code>#&gt; ─ Session info ──────────────────────────────────────────────────────────
-#&gt;  setting  value                       
-#&gt;  version  R version 3.5.0 (2018-04-23)
-#&gt;  os       macOS High Sierra 10.13.4   
-#&gt;  system   x86_64, darwin15.6.0        
-#&gt;  ui       X11                         
-#&gt;  language (EN)                        
-#&gt;  collate  en_US.UTF-8                 
-#&gt;  tz       US/Pacific                  
-#&gt;  date     2018-05-12                  
+#&gt;  setting  value                                      
+#&gt;  version  R version 3.5.1 Patched (2018-08-12 r75119)
+#&gt;  os       macOS High Sierra 10.13.6                  
+#&gt;  system   x86_64, darwin15.6.0                       
+#&gt;  ui       X11                                        
+#&gt;  language (EN)                                       
+#&gt;  collate  en_US.UTF-8                                
+#&gt;  ctype    en_US.UTF-8                                
+#&gt;  tz       US/Pacific                                 
+#&gt;  date     2018-10-10                                 
 #&gt; 
 #&gt; ─ Packages ──────────────────────────────────────────────────────────────
-#&gt;  package     * version    date       source                            
-#&gt;  assertthat    0.2.0      2017-04-11 CRAN (R 3.5.0)                    
-#&gt;  backports     1.1.2      2017-12-13 CRAN (R 3.5.0)                    
-#&gt;  bindr         0.1.1      2018-03-13 CRAN (R 3.5.0)                    
-#&gt;  bindrcpp      0.2.2      2018-03-29 CRAN (R 3.5.0)                    
-#&gt;  bookdown    * 0.7        2018-02-18 CRAN (R 3.5.0)                    
-#&gt;  cli           1.0.0      2017-11-05 CRAN (R 3.5.0)                    
-#&gt;  clisymbols    1.2.0      2017-05-21 CRAN (R 3.5.0)                    
-#&gt;  colorspace    1.3-2      2016-12-14 CRAN (R 3.5.0)                    
-#&gt;  crayon        1.3.4      2017-09-16 CRAN (R 3.5.0)                    
-#&gt;  crul          0.5.2      2018-02-24 CRAN (R 3.5.0)                    
-#&gt;  curl          3.2        2018-03-28 CRAN (R 3.5.0)                    
-#&gt;  data.table    1.11.2     2018-05-08 CRAN (R 3.5.0)                    
-#&gt;  digest        0.6.15     2018-01-28 CRAN (R 3.5.0)                    
-#&gt;  dplyr         0.7.4      2017-09-28 CRAN (R 3.5.0)                    
-#&gt;  evaluate      0.10.1     2017-06-24 CRAN (R 3.5.0)                    
-#&gt;  geoaxe        0.1.0      2016-02-19 CRAN (R 3.5.0)                    
-#&gt;  ggplot2       2.2.1      2016-12-30 CRAN (R 3.5.0)                    
-#&gt;  glue          1.2.0      2017-10-29 CRAN (R 3.5.0)                    
-#&gt;  gtable        0.2.0      2016-02-26 CRAN (R 3.5.0)                    
-#&gt;  htmltools     0.3.6      2017-04-28 CRAN (R 3.5.0)                    
-#&gt;  httr          1.3.1      2017-08-20 CRAN (R 3.5.0)                    
-#&gt;  jsonlite      1.5        2017-06-01 CRAN (R 3.5.0)                    
-#&gt;  knitr       * 1.20       2018-02-20 CRAN (R 3.5.0)                    
-#&gt;  lattice       0.20-35    2017-03-25 CRAN (R 3.5.0)                    
-#&gt;  lazyeval      0.2.1      2017-10-29 CRAN (R 3.5.0)                    
-#&gt;  lubridate     1.7.4      2018-04-11 CRAN (R 3.5.0)                    
-#&gt;  magrittr      1.5        2014-11-22 CRAN (R 3.5.0)                    
-#&gt;  mapproj       1.2-5      2017-06-08 CRAN (R 3.5.0)                    
-#&gt;  maps          3.2.0      2017-06-08 CRAN (R 3.5.0)                    
-#&gt;  munsell       0.4.3      2016-02-13 CRAN (R 3.5.0)                    
-#&gt;  oai           0.2.2      2016-11-24 CRAN (R 3.5.0)                    
-#&gt;  pillar        1.2.2      2018-04-26 CRAN (R 3.5.0)                    
-#&gt;  pkgconfig     2.0.1      2017-03-21 CRAN (R 3.5.0)                    
-#&gt;  plyr          1.8.4      2016-06-08 CRAN (R 3.5.0)                    
-#&gt;  R6            2.2.2      2017-06-17 CRAN (R 3.5.0)                    
-#&gt;  rbison        0.6.0      2018-04-11 CRAN (R 3.5.0)                    
-#&gt;  Rcpp          0.12.16    2018-03-13 CRAN (R 3.5.0)                    
-#&gt;  rebird        0.4.0      2017-04-26 CRAN (R 3.5.0)                    
-#&gt;  rgbif       * 0.9.9.9528 2018-05-12 local (ropensci/rgbif@NA)         
-#&gt;  rgeos         0.3-26     2017-10-31 CRAN (R 3.5.0)                    
-#&gt;  ridigbio      0.3.5      2017-02-16 CRAN (R 3.5.0)                    
-#&gt;  rlang         0.2.0      2018-02-20 CRAN (R 3.5.0)                    
-#&gt;  rmarkdown     1.9.11     2018-05-11 Github (rstudio/rmarkdown@41b2bab)
-#&gt;  rprojroot     1.3-2      2018-01-03 CRAN (R 3.5.0)                    
-#&gt;  rstudioapi    0.7        2017-09-07 CRAN (R 3.5.0)                    
-#&gt;  rvertnet      0.6.0      2017-08-15 CRAN (R 3.5.0)                    
-#&gt;  scales        0.5.0      2017-08-24 CRAN (R 3.5.0)                    
-#&gt;  sessioninfo   1.0.1.9000 2018-05-12 Github (r-lib/sessioninfo@c871d01)
-#&gt;  sp            1.2-5      2017-06-29 CRAN (R 3.5.0)                    
-#&gt;  spocc       * 0.7.0      2017-04-21 CRAN (R 3.5.0)                    
-#&gt;  stringi       1.2.2      2018-05-02 CRAN (R 3.5.0)                    
-#&gt;  stringr       1.3.1      2018-05-10 CRAN (R 3.5.0)                    
-#&gt;  testthat    * 2.0.0      2017-12-13 CRAN (R 3.5.0)                    
-#&gt;  tibble        1.4.2      2018-01-22 CRAN (R 3.5.0)                    
-#&gt;  triebeard     0.3.0      2016-08-04 CRAN (R 3.5.0)                    
-#&gt;  urltools      1.7.0      2018-01-20 CRAN (R 3.5.0)                    
-#&gt;  utf8          1.1.3      2018-01-03 CRAN (R 3.5.0)                    
-#&gt;  whisker       0.3-2      2013-04-28 CRAN (R 3.5.0)                    
-#&gt;  withr         2.1.2      2018-03-15 CRAN (R 3.5.0)                    
-#&gt;  xfun          0.1        2018-01-22 CRAN (R 3.5.0)                    
-#&gt;  xml2          1.2.0      2018-01-24 CRAN (R 3.5.0)                    
-#&gt;  yaml          2.1.19     2018-05-01 CRAN (R 3.5.0)</code></pre>
+#&gt;  package     * version    date       lib source                        
+#&gt;  assertthat    0.2.0      2017-04-11 [1] CRAN (R 3.5.0)                
+#&gt;  backports     1.1.2      2017-12-13 [1] CRAN (R 3.5.0)                
+#&gt;  bindr         0.1.1      2018-03-13 [1] CRAN (R 3.5.0)                
+#&gt;  bindrcpp      0.2.2      2018-03-29 [1] CRAN (R 3.5.0)                
+#&gt;  bookdown      0.7        2018-02-18 [1] CRAN (R 3.5.0)                
+#&gt;  cli           1.0.1      2018-09-25 [1] CRAN (R 3.5.1)                
+#&gt;  colorspace    1.3-2      2016-12-14 [1] CRAN (R 3.5.0)                
+#&gt;  crayon        1.3.4      2017-09-16 [1] CRAN (R 3.5.0)                
+#&gt;  crul          0.6.0      2018-07-10 [1] CRAN (R 3.5.0)                
+#&gt;  curl          3.2        2018-03-28 [1] CRAN (R 3.5.0)                
+#&gt;  data.table    1.11.8     2018-09-30 [1] CRAN (R 3.5.0)                
+#&gt;  digest        0.6.17     2018-09-12 [1] CRAN (R 3.5.1)                
+#&gt;  dplyr         0.7.6      2018-06-29 [1] CRAN (R 3.5.0)                
+#&gt;  evaluate      0.11       2018-07-17 [1] CRAN (R 3.5.1)                
+#&gt;  fansi         0.4.0      2018-10-05 [1] CRAN (R 3.5.1)                
+#&gt;  geoaxe        0.1.0      2016-02-19 [1] CRAN (R 3.5.0)                
+#&gt;  ggplot2       3.0.0      2018-07-03 [1] CRAN (R 3.5.0)                
+#&gt;  glue          1.3.0      2018-07-17 [1] CRAN (R 3.5.1)                
+#&gt;  gtable        0.2.0      2016-02-26 [1] CRAN (R 3.5.0)                
+#&gt;  htmltools     0.3.6      2017-04-28 [1] CRAN (R 3.5.0)                
+#&gt;  httpcode      0.2.0      2016-11-14 [1] CRAN (R 3.5.0)                
+#&gt;  httr          1.3.1      2017-08-20 [1] CRAN (R 3.5.0)                
+#&gt;  jsonlite      1.5        2017-06-01 [1] CRAN (R 3.5.0)                
+#&gt;  knitr         1.20       2018-02-20 [1] CRAN (R 3.5.0)                
+#&gt;  lattice       0.20-35    2017-03-25 [1] CRAN (R 3.5.1)                
+#&gt;  lazyeval      0.2.1      2017-10-29 [1] CRAN (R 3.5.0)                
+#&gt;  lubridate     1.7.4      2018-04-11 [1] CRAN (R 3.5.0)                
+#&gt;  magrittr      1.5        2014-11-22 [1] CRAN (R 3.5.0)                
+#&gt;  mapproj       1.2.6      2018-03-29 [1] CRAN (R 3.5.0)                
+#&gt;  maps          3.3.0      2018-04-03 [1] CRAN (R 3.5.0)                
+#&gt;  munsell       0.5.0      2018-06-12 [1] CRAN (R 3.5.0)                
+#&gt;  oai           0.2.2.9315 2018-05-31 [1] local (ropensci/oai@NA)       
+#&gt;  pillar        1.3.0      2018-07-14 [1] CRAN (R 3.5.0)                
+#&gt;  pkgconfig     2.0.2      2018-08-16 [1] CRAN (R 3.5.1)                
+#&gt;  plyr          1.8.4      2016-06-08 [1] CRAN (R 3.5.0)                
+#&gt;  purrr         0.2.5      2018-05-29 [1] CRAN (R 3.5.0)                
+#&gt;  R6            2.3.0      2018-10-04 [1] CRAN (R 3.5.1)                
+#&gt;  rbison        0.6.0.9121 2018-10-02 [1] local (ropensci/rbison@NA)    
+#&gt;  Rcpp          0.12.19    2018-10-01 [1] CRAN (R 3.5.1)                
+#&gt;  rebird        1.0.0      2018-09-27 [1] CRAN (R 3.5.1)                
+#&gt;  rgbif       * 1.0.4.9100 2018-10-09 [1] local (ropensci/rgbif@579a674)
+#&gt;  rgeos         0.3-28     2018-06-08 [1] CRAN (R 3.5.0)                
+#&gt;  ridigbio      0.3.5      2017-02-16 [1] CRAN (R 3.5.0)                
+#&gt;  rlang         0.2.2      2018-08-16 [1] CRAN (R 3.5.0)                
+#&gt;  rmarkdown     1.10       2018-06-11 [1] CRAN (R 3.5.0)                
+#&gt;  rprojroot     1.3-2      2018-01-03 [1] CRAN (R 3.5.0)                
+#&gt;  rstudioapi    0.8        2018-10-02 [1] CRAN (R 3.5.1)                
+#&gt;  rvertnet      0.7.0      2018-04-17 [1] CRAN (R 3.5.0)                
+#&gt;  scales        1.0.0      2018-08-09 [1] CRAN (R 3.5.1)                
+#&gt;  sessioninfo   1.1.0      2018-09-25 [1] CRAN (R 3.5.1)                
+#&gt;  sp            1.3-1      2018-06-05 [1] CRAN (R 3.5.0)                
+#&gt;  spocc       * 0.8.1.9100 2018-09-17 [1] local (ropensci/spocc@NA)     
+#&gt;  stringi       1.2.4      2018-07-20 [1] CRAN (R 3.5.0)                
+#&gt;  stringr       1.3.1      2018-05-10 [1] CRAN (R 3.5.0)                
+#&gt;  tibble        1.4.2      2018-01-22 [1] CRAN (R 3.5.1)                
+#&gt;  tidyselect    0.2.4      2018-02-26 [1] CRAN (R 3.5.0)                
+#&gt;  triebeard     0.3.0      2016-08-04 [1] CRAN (R 3.5.0)                
+#&gt;  urltools      1.7.1      2018-08-03 [1] CRAN (R 3.5.1)                
+#&gt;  utf8          1.1.4      2018-05-24 [1] CRAN (R 3.5.0)                
+#&gt;  whisker       0.3-2      2013-04-28 [1] CRAN (R 3.5.0)                
+#&gt;  withr         2.1.2      2018-03-15 [1] CRAN (R 3.5.0)                
+#&gt;  xfun          0.3        2018-07-06 [1] CRAN (R 3.5.1)                
+#&gt;  xml2          1.2.0      2018-01-24 [1] CRAN (R 3.5.0)                
+#&gt;  yaml          2.2.0      2018-07-25 [1] CRAN (R 3.5.1)                
+#&gt; 
+#&gt; [1] /Library/Frameworks/R.framework/Versions/3.5/Resources/library</code></pre>
 
 </div>
             </section>
@@ -255,7 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="use-cases.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rgbif.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -286,7 +294,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ropenscilabs/occurrence-manual/edit/master/99-session-info.Rmd",
+"link": "https://github.com/ropensci/occurrence-manual/edit/master/99-session-info.Rmd",
 "text": "Edit"
 },
 "download": ["_main.pdf", "_main.epub"],
