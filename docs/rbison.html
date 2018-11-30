@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="spocc.html">
+<link rel="prev" href="rgbif.html">
+<link rel="next" href="rvertnet.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -182,11 +182,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
-<h1><span class="header-section-number">Chapter 2</span> Introduction</h1>
-<div id="what-occurrences" class="section level2">
-<h2><span class="header-section-number">2.1</span> What is occurrence data?</h2>
-<p>Occurrence data is …</p>
+<div id="rbison" class="section level1">
+<h1><span class="header-section-number">Chapter 5</span> rbison</h1>
+<div id="what-rbison" class="section level2">
+<h2><span class="header-section-number">5.1</span> What is rbison?</h2>
+<p><a href="https://github.com/ropensci/rbison">rbison</a> is an R package that interfaces with the <a href="https://bison.usgs.gov">USGS Bison</a> API.</p>
+<p>USGS Biodiversity Information Serving Our Nation (BISON) is a web-based federal mapping resource that provides access to georeferenced (those with latitude and longitude coordinates) and non-georeferenced data describing the occurrence or presence of terrestrial and aquatic species recorded or collected by a person (or instrument) at a specific time in the United States, U.S. Territories, U.S. Marine Exclusive Economic Zones (EEZs), and Canada. Each record in a species occurrence dataset available in BISON will typically consist of a scientific name (genus and specific epithet), a date, and one or more geographic references such as a state name, county name, and/or decimal latitude and longitude coordinates. In addition to these typical data fields, species occurrence datasets often include many other data fields that describe each species occurrence event in more detail.</p>
+<p><code>rbison</code> allows one to pull species occurrence data from these datasets, inspect species occurance summaries, and then map species occurance within the US, within the contiguous 48 states, and/or at county or state level.</p>
+<p>Current data providers for BISON can be found at <a href="https://bison.usgs.gov/providers.jsp" class="uri">https://bison.usgs.gov/providers.jsp</a></p>
+<p>See <a href="https://bison.usgs.gov/doc/api.jsp" class="uri">https://bison.usgs.gov/doc/api.jsp</a> for API docs for the BISON API.</p>
+<p><code>rbison</code> has two main search functions:</p>
+<ul>
+<li><code>bison_solr()</code>: use BISON service specific parameters plus Solr parameters.
+More flexible searching, and ideal for users familiar with Solr sytnax.</li>
+<li><code>bison()</code>: higher level service without Solr inputs. This function, unlike
+<code>bison_solr()</code>, does have ability to search on a spatial area through the
+<code>aoi</code> parameter. see <code>?bison</code> after loading the package.</li>
+</ul>
+<p>Make sure to run <code>bison_datause()</code> and <code>bison_citation()</code> to get the data use
+agreement and the appropriate citation when citing BISON data.</p>
+</div>
+<div id="rbison-basic-example" class="section level2">
+<h2><span class="header-section-number">5.2</span> Basic example</h2>
+<p>Load <code>rbison</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">library</span>(rbison)</a></code></pre></div>
+<p>Search for occurrences of <em>Bison bison</em> then plot a map</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1">out &lt;-<span class="st"> </span><span class="kw">bison</span>(<span class="dt">species =</span> <span class="st">&quot;Helianthus annuus&quot;</span>, <span class="dt">count =</span> <span class="dv">500</span>)</a>
+<a class="sourceLine" id="cb9-2" title="2"><span class="kw">bisonmap</span>(out)</a></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 
 </div>
 </div>
@@ -195,8 +218,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="spocc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="rgbif.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rvertnet.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -226,7 +249,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ropensci/occurrence-manual/edit/master/01-intro.Rmd",
+"link": "https://github.com/ropensci/occurrence-manual/edit/master/04-rbison.Rmd",
 "text": "Edit"
 },
 "download": ["_main.pdf", "_main.epub"],

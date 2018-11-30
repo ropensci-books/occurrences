@@ -1,0 +1,51 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+# rbison {#rbison}
+
+## What is rbison? {#what-rbison}
+
+[rbison][] is an R package that interfaces with the [USGS Bison](https://bison.usgs.gov) API.
+
+USGS Biodiversity Information Serving Our Nation (BISON) is a web-based federal mapping resource that provides access to georeferenced (those with latitude and longitude coordinates) and non-georeferenced data describing the occurrence or presence of terrestrial and aquatic species recorded or collected by a person (or instrument) at a specific time in the United States, U.S. Territories, U.S. Marine Exclusive Economic Zones (EEZs), and Canada. Each record in a species occurrence dataset available in BISON will typically consist of a scientific name (genus and specific epithet), a date, and one or more geographic references such as a state name, county name, and/or decimal latitude and longitude coordinates. In addition to these typical data fields, species occurrence datasets often include many other data fields that describe each species occurrence event in more detail.
+
+`rbison` allows one to pull species occurrence data from these datasets, inspect species occurance summaries, and then map species occurance within the US, within the contiguous 48 states, and/or at county or state level.
+
+Current data providers for BISON can be found at <https://bison.usgs.gov/providers.jsp>
+
+See <https://bison.usgs.gov/doc/api.jsp> for API docs for the BISON API.
+
+`rbison` has two main search functions:
+
+- `bison_solr()`: use BISON service specific parameters plus Solr parameters. 
+More flexible searching, and ideal for users familiar with Solr sytnax.
+- `bison()`: higher level service without Solr inputs. This function, unlike
+`bison_solr()`, does have ability to search on a spatial area through the 
+`aoi` parameter. see `?bison`  after loading the package.
+
+Make sure to run `bison_datause()` and `bison_citation()` to get the data use 
+agreement and the appropriate citation when citing BISON data.
+
+
+## Basic example {#rbison-basic-example}
+
+Load `rbison`
+
+```{r}
+library(rbison)
+```
+
+Search for occurrences of _Bison bison_ then plot a map
+
+```{r}
+out <- bison(species = "Helianthus annuus", count = 500)
+bisonmap(out)
+```
+
+[rbison]: https://github.com/ropensci/rbison

@@ -22,7 +22,7 @@
   <meta name="twitter:description" content="occurrence manual" />
   
 
-<meta name="author" content="built w/ rgbif v1.0.4.9100 / spocc v0.8.1.9100 / rbison v0.6.0.9121">
+<meta name="author" content="built w/ rgbif v1.1.0 / spocc v0.9.0 / rbison v0.7.0">
 
 
 
@@ -66,7 +66,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -143,7 +143,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>4.1</b> What is rgbif?</a></li>
 <li class="chapter" data-level="4.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>4.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>5</b> session info</a></li>
+<li class="chapter" data-level="5" data-path="rbison.html"><a href="rbison.html"><i class="fa fa-check"></i><b>5</b> rbison</a><ul>
+<li class="chapter" data-level="5.1" data-path="rbison.html"><a href="rbison.html#what-rbison"><i class="fa fa-check"></i><b>5.1</b> What is rbison?</a></li>
+<li class="chapter" data-level="5.2" data-path="rbison.html"><a href="rbison.html#rbison-basic-example"><i class="fa fa-check"></i><b>5.2</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="rvertnet.html"><a href="rvertnet.html"><i class="fa fa-check"></i><b>6</b> rvertnet</a><ul>
+<li class="chapter" data-level="6.1" data-path="rvertnet.html"><a href="rvertnet.html#what-rvertnet"><i class="fa fa-check"></i><b>6.1</b> What is rvertnet?</a></li>
+<li class="chapter" data-level="6.2" data-path="rvertnet.html"><a href="rvertnet.html#rvertnet-basic-example"><i class="fa fa-check"></i><b>6.2</b> Basic example</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="rvertnet.html"><a href="rvertnet.html#downstream-data-manipulation"><i class="fa fa-check"></i><b>6.2.1</b> downstream data manipulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ecoengine.html"><a href="ecoengine.html"><i class="fa fa-check"></i><b>7</b> ecoengine</a><ul>
+<li class="chapter" data-level="7.1" data-path="ecoengine.html"><a href="ecoengine.html#what-ecoengine"><i class="fa fa-check"></i><b>7.1</b> What is ecoengine?</a></li>
+<li class="chapter" data-level="7.2" data-path="ecoengine.html"><a href="ecoengine.html#ecoengine-basic-example"><i class="fa fa-check"></i><b>7.2</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="auk.html"><a href="auk.html"><i class="fa fa-check"></i><b>8</b> auk</a><ul>
+<li class="chapter" data-level="8.1" data-path="auk.html"><a href="auk.html#what-auk"><i class="fa fa-check"></i><b>8.1</b> What is auk?</a></li>
+<li class="chapter" data-level="8.2" data-path="auk.html"><a href="auk.html#auk-basic-example"><i class="fa fa-check"></i><b>8.2</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>9</b> session info</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ropensci/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
 
@@ -186,97 +204,98 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="spocc-basic-example" class="section level2">
 <h2><span class="header-section-number">3.2</span> Basic example</h2>
 <p>Load <code>spocc</code> and request data for a given taxonomic name, for each of three different data sources, specify options across all data sources (e.g., <code>limit</code> number of records), and options for specific data sources (using <code>gbifopts = list()</code>, etc. for each data source).</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(spocc)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2">out &lt;-<span class="st"> </span><span class="kw">occ</span>(<span class="dt">query =</span> <span class="st">&#39;Setophaga caerulescens&#39;</span>, <span class="dt">from =</span> <span class="kw">c</span>(<span class="st">&#39;gbif&#39;</span>,<span class="st">&#39;bison&#39;</span>,<span class="st">&#39;inat&#39;</span>), <span class="dt">limit =</span> <span class="dv">3</span>, <span class="dt">gbifopts =</span> <span class="kw">list</span>(<span class="dt">country =</span> <span class="st">&#39;US&#39;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">library</span>(spocc)</a>
+<a class="sourceLine" id="cb2-2" title="2">out &lt;-<span class="st"> </span><span class="kw">occ</span>(<span class="dt">query =</span> <span class="st">&#39;Setophaga caerulescens&#39;</span>, <span class="dt">from =</span> <span class="kw">c</span>(<span class="st">&#39;gbif&#39;</span>,<span class="st">&#39;bison&#39;</span>,<span class="st">&#39;inat&#39;</span>), <span class="dt">limit =</span> <span class="dv">3</span>, <span class="dt">gbifopts =</span> <span class="kw">list</span>(<span class="dt">country =</span> <span class="st">&#39;US&#39;</span>))</a></code></pre></div>
 <p>Access GBIF data</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">out<span class="op">$</span>gbif</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="co">## Species [Setophaga caerulescens (3)] </span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">## First 10 rows of [Setophaga_caerulescens]</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">## </span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">## # A tibble: 3 x 65</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">##   name  longitude latitude prov  issues    key datasetKey publishingOrgKey</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">##   &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           </span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">## 1 Seto…     -80.3     25.7 gbif  cdrou… 1.81e9 50c9509d-… 28eb1a3f-1c15-4…</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">## 2 Seto…     -80.3     25.8 gbif  cdrou… 1.81e9 50c9509d-… 28eb1a3f-1c15-4…</span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">## 3 Seto…     -81.4     28.6 gbif  cdrou… 1.84e9 50c9509d-… 28eb1a3f-1c15-4…</span></a>
-<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">## # ... with 57 more variables: networkKeys &lt;list&gt;, installationKey &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">## #   publishingCountry &lt;chr&gt;, protocol &lt;chr&gt;, lastCrawled &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">## #   lastParsed &lt;chr&gt;, crawlId &lt;int&gt;, basisOfRecord &lt;chr&gt;, taxonKey &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">## #   kingdomKey &lt;int&gt;, phylumKey &lt;int&gt;, classKey &lt;int&gt;, orderKey &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">## #   familyKey &lt;int&gt;, genusKey &lt;int&gt;, scientificName &lt;chr&gt;, kingdom &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">## #   phylum &lt;chr&gt;, order &lt;chr&gt;, family &lt;chr&gt;, genus &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">## #   genericName &lt;chr&gt;, specificEpithet &lt;chr&gt;, taxonRank &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">## #   dateIdentified &lt;chr&gt;, coordinateUncertaintyInMeters &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">## #   stateProvince &lt;chr&gt;, year &lt;int&gt;, month &lt;int&gt;, day &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">## #   eventDate &lt;date&gt;, modified &lt;chr&gt;, lastInterpreted &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">## #   references &lt;chr&gt;, license &lt;chr&gt;, geodeticDatum &lt;chr&gt;, class &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-22" data-line-number="22"><span class="co">## #   countryCode &lt;chr&gt;, country &lt;chr&gt;, rightsHolder &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-23" data-line-number="23"><span class="co">## #   identifier &lt;chr&gt;, verbatimEventDate &lt;chr&gt;, datasetName &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-24" data-line-number="24"><span class="co">## #   gbifID &lt;chr&gt;, verbatimLocality &lt;chr&gt;, collectionCode &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-25" data-line-number="25"><span class="co">## #   occurrenceID &lt;chr&gt;, taxonID &lt;chr&gt;, catalogNumber &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-26" data-line-number="26"><span class="co">## #   recordedBy &lt;chr&gt;, `http://unknown.org/occurrenceDetails` &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-27" data-line-number="27"><span class="co">## #   institutionCode &lt;chr&gt;, rights &lt;chr&gt;, eventTime &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-28" data-line-number="28"><span class="co">## #   occurrenceRemarks &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-29" data-line-number="29"><span class="co">## #   `http://unknown.org/http_//rs.gbif.org/terms/1.0/Multimedia` &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-30" data-line-number="30"><span class="co">## #   identificationID &lt;chr&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">out<span class="op">$</span>gbif</a>
+<a class="sourceLine" id="cb3-2" title="2"><span class="co">#&gt; Species [Setophaga caerulescens (3)] </span></a>
+<a class="sourceLine" id="cb3-3" title="3"><span class="co">#&gt; First 10 rows of [Setophaga_caerulescens]</span></a>
+<a class="sourceLine" id="cb3-4" title="4"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; # A tibble: 3 x 68</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt;   name  longitude latitude prov  issues    key datasetKey publishingOrgKey</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;      &lt;chr&gt;           </span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; 1 Seto…     -80.3     25.7 gbif  cdrou… 1.81e9 50c9509d-… 28eb1a3f-1c15-4…</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; 2 Seto…     -80.3     25.8 gbif  cdrou… 1.81e9 50c9509d-… 28eb1a3f-1c15-4…</span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; 3 Seto…     -81.4     28.6 gbif  cdrou… 1.84e9 50c9509d-… 28eb1a3f-1c15-4…</span></a>
+<a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt; # … with 60 more variables: networkKeys &lt;list&gt;, installationKey &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt; #   publishingCountry &lt;chr&gt;, protocol &lt;chr&gt;, lastCrawled &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; #   lastParsed &lt;chr&gt;, crawlId &lt;int&gt;, basisOfRecord &lt;chr&gt;, taxonKey &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; #   kingdomKey &lt;int&gt;, phylumKey &lt;int&gt;, classKey &lt;int&gt;, orderKey &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; #   familyKey &lt;int&gt;, genusKey &lt;int&gt;, acceptedTaxonKey &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb3-16" title="16"><span class="co">#&gt; #   scientificName &lt;chr&gt;, acceptedScientificName &lt;chr&gt;, kingdom &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-17" title="17"><span class="co">#&gt; #   phylum &lt;chr&gt;, order &lt;chr&gt;, family &lt;chr&gt;, genus &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-18" title="18"><span class="co">#&gt; #   genericName &lt;chr&gt;, specificEpithet &lt;chr&gt;, taxonRank &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-19" title="19"><span class="co">#&gt; #   taxonomicStatus &lt;chr&gt;, dateIdentified &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-20" title="20"><span class="co">#&gt; #   coordinateUncertaintyInMeters &lt;dbl&gt;, stateProvince &lt;chr&gt;, year &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb3-21" title="21"><span class="co">#&gt; #   month &lt;int&gt;, day &lt;int&gt;, eventDate &lt;date&gt;, modified &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-22" title="22"><span class="co">#&gt; #   lastInterpreted &lt;chr&gt;, references &lt;chr&gt;, license &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-23" title="23"><span class="co">#&gt; #   geodeticDatum &lt;chr&gt;, class &lt;chr&gt;, countryCode &lt;chr&gt;, country &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-24" title="24"><span class="co">#&gt; #   rightsHolder &lt;chr&gt;, identifier &lt;chr&gt;, verbatimEventDate &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-25" title="25"><span class="co">#&gt; #   datasetName &lt;chr&gt;, verbatimLocality &lt;chr&gt;, gbifID &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-26" title="26"><span class="co">#&gt; #   collectionCode &lt;chr&gt;, occurrenceID &lt;chr&gt;, taxonID &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-27" title="27"><span class="co">#&gt; #   catalogNumber &lt;chr&gt;, recordedBy &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-28" title="28"><span class="co">#&gt; #   `http://unknown.org/occurrenceDetails` &lt;chr&gt;, institutionCode &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-29" title="29"><span class="co">#&gt; #   rights &lt;chr&gt;, eventTime &lt;chr&gt;, occurrenceRemarks &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-30" title="30"><span class="co">#&gt; #   `http://unknown.org/http_//rs.gbif.org/terms/1.0/Multimedia` &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-31" title="31"><span class="co">#&gt; #   identificationID &lt;chr&gt;</span></a></code></pre></div>
 <p>Access BISON data</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">out<span class="op">$</span>bison</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">## Species [Setophaga caerulescens (3)] </span></a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">## First 10 rows of [Setophaga_caerulescens]</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">## </span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">## # A tibble: 3 x 36</span></a>
-<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">##   name  longitude latitude prov  date       providedScienti…  year</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">##   &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;date&gt;     &lt;chr&gt;            &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">## 1 Seto…     -82.4     35.9 bison 1980-08-31 Setophaga caeru…  1980</span></a>
-<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">## 2 Seto…     -72.6     42.6 bison 1990-05-15 Setophaga caeru…  1990</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">## 3 Seto…     -82.4     35.9 bison 2012-09-25 Setophaga caeru…  2012</span></a>
-<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">## # ... with 29 more variables: countryCode &lt;chr&gt;, ambiguous &lt;lgl&gt;,</span></a>
-<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">## #   latlon &lt;chr&gt;, computedCountyFips &lt;chr&gt;, occurrenceID &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">## #   basisOfRecord &lt;chr&gt;, providedCommonName &lt;chr&gt;, collectionID &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">## #   ownerInstitutionCollectionCode &lt;chr&gt;, institutionID &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">## #   computedStateFips &lt;chr&gt;, license &lt;chr&gt;, TSNs &lt;chr&gt;, providerID &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">## #   stateProvince &lt;chr&gt;, higherGeographyID &lt;chr&gt;, geo &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">## #   provider &lt;chr&gt;, calculatedCounty &lt;chr&gt;, ITISscientificName &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="co">## #   pointPath &lt;chr&gt;, kingdom &lt;chr&gt;, calculatedState &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb4-19" data-line-number="19"><span class="co">## #   hierarchy_homonym_string &lt;chr&gt;, centroid &lt;chr&gt;, ITIScommonName &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="co">## #   resourceID &lt;chr&gt;, ITIStsn &lt;chr&gt;, providedCounty &lt;chr&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">out<span class="op">$</span>bison</a>
+<a class="sourceLine" id="cb4-2" title="2"><span class="co">#&gt; Species [Setophaga caerulescens (3)] </span></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="co">#&gt; First 10 rows of [Setophaga_caerulescens]</span></a>
+<a class="sourceLine" id="cb4-4" title="4"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb4-5" title="5"><span class="co">#&gt; # A tibble: 3 x 36</span></a>
+<a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt;   name  longitude latitude prov  date       providedScienti…  year</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt;   &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;date&gt;     &lt;chr&gt;            &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; 1 Seto…     -82.4     35.9 bison 1980-08-31 Setophaga caeru…  1980</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; 2 Seto…     -72.6     42.6 bison 1990-05-15 Setophaga caeru…  1990</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt; 3 Seto…     -82.4     35.9 bison 2012-09-25 Setophaga caeru…  2012</span></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt; # … with 29 more variables: countryCode &lt;chr&gt;, ambiguous &lt;lgl&gt;,</span></a>
+<a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; #   latlon &lt;chr&gt;, computedCountyFips &lt;chr&gt;, occurrenceID &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; #   basisOfRecord &lt;chr&gt;, providedCommonName &lt;chr&gt;, collectionID &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; #   ownerInstitutionCollectionCode &lt;chr&gt;, institutionID &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; #   computedStateFips &lt;chr&gt;, license &lt;chr&gt;, TSNs &lt;chr&gt;, providerID &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; #   stateProvince &lt;chr&gt;, higherGeographyID &lt;chr&gt;, geo &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb4-17" title="17"><span class="co">#&gt; #   provider &lt;chr&gt;, calculatedCounty &lt;chr&gt;, ITISscientificName &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb4-18" title="18"><span class="co">#&gt; #   pointPath &lt;chr&gt;, kingdom &lt;chr&gt;, calculatedState &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb4-19" title="19"><span class="co">#&gt; #   hierarchy_homonym_string &lt;chr&gt;, centroid &lt;chr&gt;, ITIScommonName &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb4-20" title="20"><span class="co">#&gt; #   resourceID &lt;chr&gt;, ITIStsn &lt;chr&gt;, providedCounty &lt;chr&gt;</span></a></code></pre></div>
 <p>Access iNaturalist data</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">out<span class="op">$</span>inat</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="co">## Species [Setophaga caerulescens (3)] </span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="co">## First 10 rows of [Setophaga_caerulescens]</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="co">## </span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="co">## # A tibble: 3 x 71</span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">##   name  longitude latitude prov      id observed_on description map_scale</span></a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">##   &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt; &lt;date&gt;      &lt;chr&gt;           &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="co">## 1 Seto… -87.6331… 41.9631… inat  1.74e7 2017-05-22  &lt;NA&gt;               NA</span></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">## 2 Seto… -81.1809… 39.5240… inat  1.74e7 2018-10-06  IDed by Da…         9</span></a>
-<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="co">## 3 Seto… -65.1688… 44.4575… inat  1.74e7 2017-06-07  &lt;NA&gt;               NA</span></a>
-<a class="sourceLine" id="cb5-11" data-line-number="11"><span class="co">## # ... with 63 more variables: timeframe &lt;lgl&gt;, species_guess &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="co">## #   user_id &lt;int&gt;, taxon_id &lt;int&gt;, created_at &lt;chr&gt;, updated_at &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">## #   place_guess &lt;chr&gt;, id_please &lt;lgl&gt;, observed_on_string &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="co">## #   iconic_taxon_id &lt;int&gt;, num_identification_agreements &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">## #   num_identification_disagreements &lt;int&gt;, time_observed_at &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-16" data-line-number="16"><span class="co">## #   time_zone &lt;chr&gt;, location_is_exact &lt;lgl&gt;, delta &lt;lgl&gt;,</span></a>
-<a class="sourceLine" id="cb5-17" data-line-number="17"><span class="co">## #   positional_accuracy &lt;int&gt;, geoprivacy &lt;chr&gt;, quality_grade &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-18" data-line-number="18"><span class="co">## #   positioning_method &lt;chr&gt;, positioning_device &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-19" data-line-number="19"><span class="co">## #   out_of_range &lt;lgl&gt;, license &lt;chr&gt;, uri &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-20" data-line-number="20"><span class="co">## #   observation_photos_count &lt;int&gt;, comments_count &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb5-21" data-line-number="21"><span class="co">## #   zic_time_zone &lt;chr&gt;, oauth_application_id &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb5-22" data-line-number="22"><span class="co">## #   observation_sounds_count &lt;int&gt;, identifications_count &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb5-23" data-line-number="23"><span class="co">## #   captive &lt;lgl&gt;, community_taxon_id &lt;int&gt;, site_id &lt;int&gt;,</span></a>
-<a class="sourceLine" id="cb5-24" data-line-number="24"><span class="co">## #   old_uuid &lt;lgl&gt;, public_positional_accuracy &lt;int&gt;, mappable &lt;lgl&gt;,</span></a>
-<a class="sourceLine" id="cb5-25" data-line-number="25"><span class="co">## #   cached_votes_total &lt;int&gt;, last_indexed_at &lt;chr&gt;, uuid &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-26" data-line-number="26"><span class="co">## #   short_description &lt;chr&gt;, user_login &lt;chr&gt;, iconic_taxon_name &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-27" data-line-number="27"><span class="co">## #   tag_list &lt;chr&gt;, faves_count &lt;int&gt;, created_at_utc &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-28" data-line-number="28"><span class="co">## #   updated_at_utc &lt;chr&gt;, time_observed_at_utc &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-29" data-line-number="29"><span class="co">## #   owners_identification_from_vision &lt;lgl&gt;, coordinates_obscured &lt;lgl&gt;,</span></a>
-<a class="sourceLine" id="cb5-30" data-line-number="30"><span class="co">## #   taxon.id &lt;int&gt;, taxon.rank &lt;chr&gt;, taxon.ancestry &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-31" data-line-number="31"><span class="co">## #   taxon.common_name.id &lt;int&gt;, taxon.common_name.name &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-32" data-line-number="32"><span class="co">## #   taxon.common_name.is_valid &lt;lgl&gt;, taxon.common_name.lexicon &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-33" data-line-number="33"><span class="co">## #   iconic_taxon.id &lt;int&gt;, iconic_taxon.name &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-34" data-line-number="34"><span class="co">## #   iconic_taxon.rank &lt;chr&gt;, iconic_taxon.rank_level &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb5-35" data-line-number="35"><span class="co">## #   iconic_taxon.ancestry &lt;chr&gt;, user.login &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb5-36" data-line-number="36"><span class="co">## #   user.user_icon_url &lt;chr&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">out<span class="op">$</span>inat</a>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co">#&gt; Species [Setophaga caerulescens (3)] </span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; First 10 rows of [Setophaga_caerulescens]</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt; # A tibble: 3 x 71</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt;   name  longitude latitude prov      id observed_on description map_scale</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;  &lt;int&gt; &lt;date&gt;      &lt;chr&gt;           &lt;int&gt;</span></a>
+<a class="sourceLine" id="cb5-8" title="8"><span class="co">#&gt; 1 Seto… -84.0393  35.3091  inat  1.87e7 2009-09-08  https://ma…        NA</span></a>
+<a class="sourceLine" id="cb5-9" title="9"><span class="co">#&gt; 2 Seto… -84.0393  35.3091  inat  1.87e7 2013-09-14  https://ma…        NA</span></a>
+<a class="sourceLine" id="cb5-10" title="10"><span class="co">#&gt; 3 Seto… -84.0393  35.3091  inat  1.87e7 2009-09-12  https://ma…        NA</span></a>
+<a class="sourceLine" id="cb5-11" title="11"><span class="co">#&gt; # … with 63 more variables: timeframe &lt;lgl&gt;, species_guess &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-12" title="12"><span class="co">#&gt; #   user_id &lt;int&gt;, taxon_id &lt;int&gt;, created_at &lt;chr&gt;, updated_at &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-13" title="13"><span class="co">#&gt; #   place_guess &lt;chr&gt;, id_please &lt;lgl&gt;, observed_on_string &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-14" title="14"><span class="co">#&gt; #   iconic_taxon_id &lt;int&gt;, num_identification_agreements &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb5-15" title="15"><span class="co">#&gt; #   num_identification_disagreements &lt;int&gt;, time_observed_at &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-16" title="16"><span class="co">#&gt; #   time_zone &lt;chr&gt;, location_is_exact &lt;lgl&gt;, delta &lt;lgl&gt;,</span></a>
+<a class="sourceLine" id="cb5-17" title="17"><span class="co">#&gt; #   positional_accuracy &lt;int&gt;, geoprivacy &lt;chr&gt;, quality_grade &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-18" title="18"><span class="co">#&gt; #   positioning_method &lt;chr&gt;, positioning_device &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-19" title="19"><span class="co">#&gt; #   out_of_range &lt;lgl&gt;, license &lt;chr&gt;, uri &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-20" title="20"><span class="co">#&gt; #   observation_photos_count &lt;int&gt;, comments_count &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb5-21" title="21"><span class="co">#&gt; #   zic_time_zone &lt;chr&gt;, oauth_application_id &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb5-22" title="22"><span class="co">#&gt; #   observation_sounds_count &lt;int&gt;, identifications_count &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb5-23" title="23"><span class="co">#&gt; #   captive &lt;lgl&gt;, community_taxon_id &lt;int&gt;, site_id &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb5-24" title="24"><span class="co">#&gt; #   old_uuid &lt;lgl&gt;, public_positional_accuracy &lt;int&gt;, mappable &lt;lgl&gt;,</span></a>
+<a class="sourceLine" id="cb5-25" title="25"><span class="co">#&gt; #   cached_votes_total &lt;int&gt;, last_indexed_at &lt;chr&gt;, uuid &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-26" title="26"><span class="co">#&gt; #   short_description &lt;chr&gt;, user_login &lt;chr&gt;, iconic_taxon_name &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-27" title="27"><span class="co">#&gt; #   tag_list &lt;chr&gt;, faves_count &lt;int&gt;, created_at_utc &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-28" title="28"><span class="co">#&gt; #   updated_at_utc &lt;chr&gt;, time_observed_at_utc &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-29" title="29"><span class="co">#&gt; #   owners_identification_from_vision &lt;lgl&gt;, coordinates_obscured &lt;lgl&gt;,</span></a>
+<a class="sourceLine" id="cb5-30" title="30"><span class="co">#&gt; #   taxon.id &lt;int&gt;, taxon.rank &lt;chr&gt;, taxon.ancestry &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-31" title="31"><span class="co">#&gt; #   taxon.common_name.id &lt;int&gt;, taxon.common_name.name &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-32" title="32"><span class="co">#&gt; #   taxon.common_name.is_valid &lt;lgl&gt;, taxon.common_name.lexicon &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-33" title="33"><span class="co">#&gt; #   iconic_taxon.id &lt;int&gt;, iconic_taxon.name &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-34" title="34"><span class="co">#&gt; #   iconic_taxon.rank &lt;chr&gt;, iconic_taxon.rank_level &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb5-35" title="35"><span class="co">#&gt; #   iconic_taxon.ancestry &lt;chr&gt;, user.login &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb5-36" title="36"><span class="co">#&gt; #   user.user_icon_url &lt;chr&gt;</span></a></code></pre></div>
 
 </div>
 </div>

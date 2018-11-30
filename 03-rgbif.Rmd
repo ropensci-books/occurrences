@@ -1,3 +1,13 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+
 # rgbif {#rgbif}
 
 ## What is rgbif? {#what-rgbif}
@@ -36,11 +46,10 @@ Load `rgbif` xxx
 library(rgbif)
 ```
 
-```{r collapse = TRUE}
+```{r}
 splist <- c('Accipiter erythronemius', 'Junco hyemalis', 'Aix sponsa')
 keys <- vapply(splist, function(x) name_backbone(name = x)$speciesKey, integer(1))
 occ_search(taxonKey = keys, limit = 5, hasCoordinate = TRUE)
-
 ```
 
 [spocc]: https://github.com/ropensci/spocc

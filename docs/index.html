@@ -22,7 +22,7 @@
   <meta name="twitter:description" content="occurrence manual" />
   
 
-<meta name="author" content="built w/ rgbif v1.0.4.9100 / spocc v0.8.1.9100 / rbison v0.6.0.9121">
+<meta name="author" content="built w/ rgbif v1.1.0 / spocc v0.9.0 / rbison v0.7.0">
 
 
 
@@ -66,7 +66,7 @@ a.sourceLine { text-indent: -1em; padding-left: 1em; }
 pre.numberSource a.sourceLine
   { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+  { content: attr(title);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
     border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
@@ -143,7 +143,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="rgbif.html"><a href="rgbif.html#what-rgbif"><i class="fa fa-check"></i><b>4.1</b> What is rgbif?</a></li>
 <li class="chapter" data-level="4.2" data-path="rgbif.html"><a href="rgbif.html#rgbif-basic-example"><i class="fa fa-check"></i><b>4.2</b> Basic example</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>5</b> session info</a></li>
+<li class="chapter" data-level="5" data-path="rbison.html"><a href="rbison.html"><i class="fa fa-check"></i><b>5</b> rbison</a><ul>
+<li class="chapter" data-level="5.1" data-path="rbison.html"><a href="rbison.html#what-rbison"><i class="fa fa-check"></i><b>5.1</b> What is rbison?</a></li>
+<li class="chapter" data-level="5.2" data-path="rbison.html"><a href="rbison.html#rbison-basic-example"><i class="fa fa-check"></i><b>5.2</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="rvertnet.html"><a href="rvertnet.html"><i class="fa fa-check"></i><b>6</b> rvertnet</a><ul>
+<li class="chapter" data-level="6.1" data-path="rvertnet.html"><a href="rvertnet.html#what-rvertnet"><i class="fa fa-check"></i><b>6.1</b> What is rvertnet?</a></li>
+<li class="chapter" data-level="6.2" data-path="rvertnet.html"><a href="rvertnet.html#rvertnet-basic-example"><i class="fa fa-check"></i><b>6.2</b> Basic example</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="rvertnet.html"><a href="rvertnet.html#downstream-data-manipulation"><i class="fa fa-check"></i><b>6.2.1</b> downstream data manipulation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="ecoengine.html"><a href="ecoengine.html"><i class="fa fa-check"></i><b>7</b> ecoengine</a><ul>
+<li class="chapter" data-level="7.1" data-path="ecoengine.html"><a href="ecoengine.html#what-ecoengine"><i class="fa fa-check"></i><b>7.1</b> What is ecoengine?</a></li>
+<li class="chapter" data-level="7.2" data-path="ecoengine.html"><a href="ecoengine.html#ecoengine-basic-example"><i class="fa fa-check"></i><b>7.2</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="auk.html"><a href="auk.html"><i class="fa fa-check"></i><b>8</b> auk</a><ul>
+<li class="chapter" data-level="8.1" data-path="auk.html"><a href="auk.html#what-auk"><i class="fa fa-check"></i><b>8.1</b> What is auk?</a></li>
+<li class="chapter" data-level="8.2" data-path="auk.html"><a href="auk.html#auk-basic-example"><i class="fa fa-check"></i><b>8.2</b> Basic example</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>9</b> session info</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/ropensci/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
 
@@ -166,12 +184,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">occurrence manual</h1>
-<h4 class="author"><em>built w/ rgbif v1.0.4.9100 / spocc v0.8.1.9100 / rbison v0.6.0.9121</em></h4>
-<h4 class="date"><em>built on 2018-10-10</em></h4>
+<h4 class="author"><em>built w/ rgbif v1.1.0 / spocc v0.9.0 / rbison v0.7.0</em></h4>
+<h4 class="date"><em>built on 2018-11-29</em></h4>
 </div>
 <div id="occurrence-manual" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> occurrence manual</h1>
-<p>write some stuff …</p>
+<p>This book covers a suite of R packages used in working with biological
+occurrence data</p>
 <div id="info" class="section level2">
 <h2><span class="header-section-number">1.1</span> Info</h2>
 <ul>
@@ -185,13 +204,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>rbison</code>: <a href="https://cran.rstudio.com/web/packages/rbison/" class="uri">https://cran.rstudio.com/web/packages/rbison/</a></li>
 <li><code>rvertnet</code>: <a href="https://cran.rstudio.com/web/packages/rvertnet/" class="uri">https://cran.rstudio.com/web/packages/rvertnet/</a></li>
 <li><code>ecoengine</code>: <a href="https://cran.rstudio.com/web/packages/ecoengine/" class="uri">https://cran.rstudio.com/web/packages/ecoengine/</a></li>
-<li><code>AntWeb</code>: <a href="https://cran.rstudio.com/web/packages/AntWeb/" class="uri">https://cran.rstudio.com/web/packages/AntWeb/</a></li>
+<li><code>auk</code>: <a href="https://cran.rstudio.com/web/packages/auk/" class="uri">https://cran.rstudio.com/web/packages/auk/</a></li>
 </ul>
 </div>
 <div id="installation" class="section level2">
 <h2><span class="header-section-number">1.2</span> Installation</h2>
 <p>Stable version from CRAN</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;rgbif&quot;</span>, <span class="st">&quot;spocc&quot;</span>, <span class="st">&quot;rbison&quot;</span>, <span class="st">&quot;rvertnet&quot;</span>, <span class="st">&quot;ecoengine&quot;</span>, <span class="st">&quot;AntWeb&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;rgbif&quot;</span>, <span class="st">&quot;spocc&quot;</span>, <span class="st">&quot;rbison&quot;</span>, <span class="st">&quot;rvertnet&quot;</span>, <span class="st">&quot;ecoengine&quot;</span>, <span class="st">&quot;auk&quot;</span>))</a></code></pre></div>
 
 </div>
 </div>

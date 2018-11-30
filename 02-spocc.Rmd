@@ -1,3 +1,13 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+
 # spocc {#spocc}
 
 ## What is spocc? {#what-spocc}
@@ -28,19 +38,19 @@ out <- occ(query = 'Setophaga caerulescens', from = c('gbif','bison','inat'), li
 
 Access GBIF data
 
-```{r collapse=TRUE}
+```{r}
 out$gbif
 ```
 
 Access BISON data
 
-```{r collapse=TRUE}
+```{r}
 out$bison
 ```
 
 Access iNaturalist data
 
-```{r collapse=TRUE}
+```{r}
 out$inat
 ```
 

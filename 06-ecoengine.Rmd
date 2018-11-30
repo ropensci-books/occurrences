@@ -1,0 +1,28 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+# ecoengine {#ecoengine}
+
+## What is ecoengine? {#what-ecoengine}
+
+[ecoengine][] is an R package xxx
+
+
+## Basic example {#ecoengine-basic-example}
+
+Load `ecoengine`
+
+```{r}
+library(ecoengine)
+```
+
+xxx
+
+
+[ecoengine]: https://github.com/ropensci/ecoengine

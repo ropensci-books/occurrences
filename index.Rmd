@@ -12,12 +12,13 @@ description: "occurrence manual"
 ---
 
 ```{r echo=FALSE, results="hide"}
-occ_pkgs <- c("rgbif", "spocc", "rbison", "rvertnet", "ecoengine", "AntWeb")
+occ_pkgs <- c("rgbif", "spocc", "rbison", "rvertnet", "ecoengine", "auk")
 ```
 
 # occurrence manual
 
-write some stuff ...
+This book covers a suite of R packages used in working with biological 
+occurrence data
 
 ## Info
 
@@ -31,7 +32,7 @@ Packages
 * `rbison`: <https://cran.rstudio.com/web/packages/rbison/>
 * `rvertnet`: <https://cran.rstudio.com/web/packages/rvertnet/>
 * `ecoengine`: <https://cran.rstudio.com/web/packages/ecoengine/>
-* `AntWeb`: <https://cran.rstudio.com/web/packages/AntWeb/>
+* `auk`: <https://cran.rstudio.com/web/packages/auk/>
 
 
 ## Installation
@@ -39,6 +40,5 @@ Packages
 Stable version from CRAN
 
 ```{r eval=FALSE}
-install.packages(c("rgbif", "spocc", "rbison", "rvertnet", "ecoengine", "AntWeb"))
-
+install.packages(c("rgbif", "spocc", "rbison", "rvertnet", "ecoengine", "auk"))
 ```

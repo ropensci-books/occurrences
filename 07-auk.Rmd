@@ -1,0 +1,28 @@
+```{r echo=FALSE}
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  warning = FALSE,
+  message = FALSE
+)
+```
+
+# auk {#auk}
+
+## What is auk? {#what-auk}
+
+[auk][] is an R package xxx
+
+
+## Basic example {#auk-basic-example}
+
+Load `auk`
+
+```{r}
+library(auk)
+```
+
+xxx
+
+
+[auk]: https://github.com/ropensci/auk
