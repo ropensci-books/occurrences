@@ -18,7 +18,7 @@ occ_pkgs <- c("rgbif", "spocc", "rbison", "rvertnet", "ecoengine", "auk")
 # occurrence manual
 
 This book covers a suite of R packages used in working with biological 
-occurrence data
+occurrence data.
 
 ## Info
 
