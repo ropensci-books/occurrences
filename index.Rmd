@@ -7,7 +7,7 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-github-repo: ropensci/occurrence-manual
+github-repo: ropenscilabs/occurrence-manual
 description: "occurrence manual"
 ---
 
@@ -22,7 +22,7 @@ occurrence data.
 
 ## Info
 
-* Code: <https://github.com/ropensci/occurrence-manual/>
+* Code: <https://github.com/ropenscilabs/occurrence-manual/>
 * Issues/Bug reports: Go to issue trackers for each package
 
 Packages

@@ -6,6 +6,9 @@ Manual for working with biological occurrences data
 * [rgbif](https://github.com/ropensci/rgbif)
 * [spocc](https://github.com/ropensci/spocc)
 * [rbison](https://github.com/ropensci/rbison)
+* [rvertnet](https://github.com/ropensci/rvertnet)
+* [ecoengine](https://github.com/ropensci/ecoengine)
+* [auk](https://github.com/ropensci/auk)
 
 ## contributions
 

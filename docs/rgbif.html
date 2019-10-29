@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 rgbif | occurrence manual</title>
-  <meta name="description" content="Chapter 4 rgbif | occurrence manual">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Chapter 4 rgbif | occurrence manual" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 rgbif | occurrence manual" />
   <meta property="og:type" content="book" />
   
   
   <meta property="og:description" content="Chapter 4 rgbif | occurrence manual" />
-  <meta name="github-repo" content="ropensci/occurrence-manual" />
+  <meta name="github-repo" content="ropenscilabs/occurrence-manual" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 4 rgbif | occurrence manual" />
@@ -22,17 +21,17 @@
   <meta name="twitter:description" content="Chapter 4 rgbif | occurrence manual" />
   
 
-<meta name="author" content="built w/ rgbif v1.1.0.9113 / spocc v0.9.0 / rbison v0.7.0">
+<meta name="author" content="built w/ rgbif v1.4.0 / spocc v1.0.0 / rbison v0.8.0" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="spocc.html">
-<link rel="next" href="rbison.html">
+<link rel="prev" href="spocc.html"/>
+<link rel="next" href="rbison.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -40,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -55,7 +57,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -164,7 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="session-info.html"><a href="session-info.html"><i class="fa fa-check"></i><b>9</b> session info</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/ropensci/occurrence-manual" target="blank">(c) Scott Chamberlain, 2018</a></li>
+<li><a href="https://github.com/ropenscilabs/occurrence-manual" target="blank">(c) Scott Chamberlain, 2019</a></li>
 
 </ul>
 
@@ -224,54 +225,46 @@ occurrence API, but it’s been removed - see package [mapr][]</li>
 <div id="rgbif-basic-example" class="section level2">
 <h2><span class="header-section-number">4.2</span> Basic example</h2>
 <p>Load <code>rgbif</code> xxx</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rgbif)</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">splist &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Accipiter erythronemius&#39;</span>, <span class="st">&#39;Junco hyemalis&#39;</span>, <span class="st">&#39;Aix sponsa&#39;</span>)
-keys &lt;-<span class="st"> </span><span class="kw">vapply</span>(splist, <span class="cf">function</span>(x) <span class="kw">name_backbone</span>(<span class="dt">name =</span> x)<span class="op">$</span>speciesKey, <span class="kw">integer</span>(<span class="dv">1</span>))
-<span class="kw">occ_search</span>(<span class="dt">taxonKey =</span> keys, <span class="dt">limit =</span> <span class="dv">5</span>, <span class="dt">hasCoordinate =</span> <span class="ot">TRUE</span>)
-<span class="co">#&gt; Occ. found [2480598 (20), 9362842 (3807113), 2498387 (1246358)] </span>
-<span class="co">#&gt; Occ. returned [2480598 (5), 9362842 (5), 2498387 (5)] </span>
-<span class="co">#&gt; No. unique hierarchies [2480598 (1), 9362842 (1), 2498387 (1)] </span>
-<span class="co">#&gt; No. media records [2480598 (3), 9362842 (4), 2498387 (5)] </span>
-<span class="co">#&gt; No. facets [2480598 (0), 9362842 (0), 2498387 (0)] </span>
-<span class="co">#&gt; Args [hasCoordinate=TRUE, limit=5, offset=0,</span>
-<span class="co">#&gt;      taxonKey=2480598,9362842,2498387, fields=all] </span>
-<span class="co">#&gt; 3 requests; First 10 rows of data from 2480598</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; # A tibble: 5 x 91</span>
-<span class="co">#&gt;   name     key decimalLatitude decimalLongitude issues datasetKey</span>
-<span class="co">#&gt;   &lt;chr&gt;  &lt;int&gt;           &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     </span>
-<span class="co">#&gt; 1 Acci… 1.98e9          -22.4             -42.9 &quot;&quot;     b1047888-…</span>
-<span class="co">#&gt; 2 Acci… 1.00e9          -27.6             -58.7 cudc,… ad43e954-…</span>
-<span class="co">#&gt; 3 Acci… 1.00e9          -27.9             -59.1 cudc,… ad43e954-…</span>
-<span class="co">#&gt; 4 Acci… 1.93e9          -24.3             -48.4 cdrou… b1047888-…</span>
-<span class="co">#&gt; 5 Acci… 6.86e8            5.27            -60.7 cdrou… e635240a-…</span>
-<span class="co">#&gt; # … with 85 more variables: publishingOrgKey &lt;chr&gt;, networkKeys &lt;chr&gt;,</span>
-<span class="co">#&gt; #   installationKey &lt;chr&gt;, publishingCountry &lt;chr&gt;, protocol &lt;chr&gt;,</span>
-<span class="co">#&gt; #   lastCrawled &lt;chr&gt;, lastParsed &lt;chr&gt;, crawlId &lt;int&gt;, extensions &lt;chr&gt;,</span>
-<span class="co">#&gt; #   basisOfRecord &lt;chr&gt;, taxonKey &lt;int&gt;, kingdomKey &lt;int&gt;,</span>
-<span class="co">#&gt; #   phylumKey &lt;int&gt;, classKey &lt;int&gt;, orderKey &lt;int&gt;, familyKey &lt;int&gt;,</span>
-<span class="co">#&gt; #   genusKey &lt;int&gt;, speciesKey &lt;int&gt;, acceptedTaxonKey &lt;int&gt;,</span>
-<span class="co">#&gt; #   scientificName &lt;chr&gt;, acceptedScientificName &lt;chr&gt;, kingdom &lt;chr&gt;,</span>
-<span class="co">#&gt; #   phylum &lt;chr&gt;, order &lt;chr&gt;, family &lt;chr&gt;, genus &lt;chr&gt;, species &lt;chr&gt;,</span>
-<span class="co">#&gt; #   genericName &lt;chr&gt;, specificEpithet &lt;chr&gt;, taxonRank &lt;chr&gt;,</span>
-<span class="co">#&gt; #   taxonomicStatus &lt;chr&gt;, year &lt;int&gt;, month &lt;int&gt;, day &lt;int&gt;,</span>
-<span class="co">#&gt; #   eventDate &lt;chr&gt;, lastInterpreted &lt;chr&gt;, references &lt;chr&gt;,</span>
-<span class="co">#&gt; #   license &lt;chr&gt;, identifiers &lt;chr&gt;, facts &lt;chr&gt;, relations &lt;chr&gt;,</span>
-<span class="co">#&gt; #   geodeticDatum &lt;chr&gt;, class &lt;chr&gt;, countryCode &lt;chr&gt;, country &lt;chr&gt;,</span>
-<span class="co">#&gt; #   rightsHolder &lt;chr&gt;, identifier &lt;chr&gt;, nomenclaturalCode &lt;chr&gt;,</span>
-<span class="co">#&gt; #   verbatimEventDate &lt;chr&gt;, locality &lt;chr&gt;, gbifID &lt;chr&gt;,</span>
-<span class="co">#&gt; #   collectionCode &lt;chr&gt;, occurrenceID &lt;chr&gt;, catalogNumber &lt;chr&gt;,</span>
-<span class="co">#&gt; #   recordedBy &lt;chr&gt;, vernacularName &lt;chr&gt;, fieldNotes &lt;chr&gt;,</span>
-<span class="co">#&gt; #   eventTime &lt;chr&gt;, verbatimElevation &lt;chr&gt;, behavior &lt;chr&gt;,</span>
-<span class="co">#&gt; #   higherClassification &lt;chr&gt;, modified &lt;chr&gt;, created &lt;chr&gt;,</span>
-<span class="co">#&gt; #   associatedSequences &lt;chr&gt;, taxonID &lt;chr&gt;, sex &lt;chr&gt;,</span>
-<span class="co">#&gt; #   establishmentMeans &lt;chr&gt;, continent &lt;chr&gt;, institutionID &lt;chr&gt;,</span>
-<span class="co">#&gt; #   dynamicProperties &lt;chr&gt;, fieldNumber &lt;chr&gt;, language &lt;chr&gt;,</span>
-<span class="co">#&gt; #   type &lt;chr&gt;, preparations &lt;chr&gt;, occurrenceStatus &lt;chr&gt;,</span>
-<span class="co">#&gt; #   institutionCode &lt;chr&gt;, higherGeography &lt;chr&gt;, endDayOfYear &lt;chr&gt;,</span>
-<span class="co">#&gt; #   georeferenceVerificationStatus &lt;chr&gt;, datasetName &lt;chr&gt;,</span>
-<span class="co">#&gt; #   verbatimLocality &lt;chr&gt;, otherCatalogNumbers &lt;chr&gt;,</span>
-<span class="co">#&gt; #   startDayOfYear &lt;chr&gt;, accessRights &lt;chr&gt;, collectionID &lt;chr&gt;</span></code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">library</span>(rgbif)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">splist &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&#39;Accipiter erythronemius&#39;</span>, <span class="st">&#39;Junco hyemalis&#39;</span>, <span class="st">&#39;Aix sponsa&#39;</span>)</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">keys &lt;-<span class="st"> </span><span class="kw">vapply</span>(splist, <span class="cf">function</span>(x) <span class="kw">name_backbone</span>(<span class="dt">name =</span> x)<span class="op">$</span>speciesKey, <span class="kw">integer</span>(<span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">occ_search</span>(<span class="dt">taxonKey =</span> keys, <span class="dt">limit =</span> <span class="dv">5</span>, <span class="dt">hasCoordinate =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="co">#&gt; Records found [2480598 (33), 9362842 (5525661), 2498387 (1826375)] </span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="co">#&gt; Records returned [2480598 (5), 9362842 (5), 2498387 (5)] </span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="co">#&gt; No. unique hierarchies [2480598 (1), 9362842 (1), 2498387 (1)] </span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">#&gt; No. media records [2480598 (5), 9362842 (5), 2498387 (5)] </span></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co">#&gt; No. facets [2480598 (0), 9362842 (0), 2498387 (0)] </span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co">#&gt; Args [hasCoordinate=TRUE, limit=5, offset=0,</span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="co">#&gt;      taxonKey=2480598,9362842,2498387, fields=all] </span></a>
+<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="co">#&gt; 3 requests; First 10 rows of data from 2480598</span></a>
+<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="co">#&gt; # A tibble: 5 x 68</span></a>
+<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="co">#&gt;   key   scientificName decimalLatitude decimalLongitude issues datasetKey</span></a>
+<a class="sourceLine" id="cb7-15" data-line-number="15"><span class="co">#&gt;   &lt;chr&gt; &lt;chr&gt;                    &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;     </span></a>
+<a class="sourceLine" id="cb7-16" data-line-number="16"><span class="co">#&gt; 1 2243… Accipiter ery…           -38.3            -60.4 &quot;&quot;     b1047888-…</span></a>
+<a class="sourceLine" id="cb7-17" data-line-number="17"><span class="co">#&gt; 2 2432… Accipiter ery…           -24.0            -52.2 &quot;&quot;     b1047888-…</span></a>
+<a class="sourceLine" id="cb7-18" data-line-number="18"><span class="co">#&gt; 3 2243… Accipiter ery…           -24.3            -48.4 &quot;&quot;     b1047888-…</span></a>
+<a class="sourceLine" id="cb7-19" data-line-number="19"><span class="co">#&gt; 4 2243… Accipiter ery…           -26.3            -48.6 &quot;&quot;     b1047888-…</span></a>
+<a class="sourceLine" id="cb7-20" data-line-number="20"><span class="co">#&gt; 5 2243… Accipiter ery…           -26.3            -48.6 &quot;&quot;     b1047888-…</span></a>
+<a class="sourceLine" id="cb7-21" data-line-number="21"><span class="co">#&gt; # … with 62 more variables: publishingOrgKey &lt;chr&gt;, networkKeys &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-22" data-line-number="22"><span class="co">#&gt; #   installationKey &lt;chr&gt;, publishingCountry &lt;chr&gt;, protocol &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-23" data-line-number="23"><span class="co">#&gt; #   lastCrawled &lt;chr&gt;, lastParsed &lt;chr&gt;, crawlId &lt;int&gt;, extensions &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-24" data-line-number="24"><span class="co">#&gt; #   basisOfRecord &lt;chr&gt;, taxonKey &lt;int&gt;, kingdomKey &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb7-25" data-line-number="25"><span class="co">#&gt; #   phylumKey &lt;int&gt;, classKey &lt;int&gt;, orderKey &lt;int&gt;, familyKey &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb7-26" data-line-number="26"><span class="co">#&gt; #   genusKey &lt;int&gt;, speciesKey &lt;int&gt;, acceptedTaxonKey &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb7-27" data-line-number="27"><span class="co">#&gt; #   acceptedScientificName &lt;chr&gt;, kingdom &lt;chr&gt;, phylum &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-28" data-line-number="28"><span class="co">#&gt; #   order &lt;chr&gt;, family &lt;chr&gt;, genus &lt;chr&gt;, species &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-29" data-line-number="29"><span class="co">#&gt; #   genericName &lt;chr&gt;, specificEpithet &lt;chr&gt;, taxonRank &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-30" data-line-number="30"><span class="co">#&gt; #   taxonomicStatus &lt;chr&gt;, year &lt;int&gt;, month &lt;int&gt;, day &lt;int&gt;,</span></a>
+<a class="sourceLine" id="cb7-31" data-line-number="31"><span class="co">#&gt; #   eventDate &lt;chr&gt;, lastInterpreted &lt;chr&gt;, references &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-32" data-line-number="32"><span class="co">#&gt; #   license &lt;chr&gt;, identifiers &lt;chr&gt;, facts &lt;chr&gt;, relations &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-33" data-line-number="33"><span class="co">#&gt; #   geodeticDatum &lt;chr&gt;, class &lt;chr&gt;, countryCode &lt;chr&gt;, country &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-34" data-line-number="34"><span class="co">#&gt; #   rightsHolder &lt;chr&gt;, identifier &lt;chr&gt;, nomenclaturalCode &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-35" data-line-number="35"><span class="co">#&gt; #   verbatimEventDate &lt;chr&gt;, locality &lt;chr&gt;, gbifID &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-36" data-line-number="36"><span class="co">#&gt; #   collectionCode &lt;chr&gt;, occurrenceID &lt;chr&gt;, catalogNumber &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-37" data-line-number="37"><span class="co">#&gt; #   recordedBy &lt;chr&gt;, vernacularName &lt;chr&gt;, fieldNotes &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-38" data-line-number="38"><span class="co">#&gt; #   eventTime &lt;chr&gt;, verbatimElevation &lt;chr&gt;, behavior &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb7-39" data-line-number="39"><span class="co">#&gt; #   higherClassification &lt;chr&gt;, name &lt;chr&gt;, associatedTaxa &lt;chr&gt;</span></a></code></pre></div>
 
 </div>
 </div>
@@ -286,11 +279,13 @@ keys &lt;-<span class="st"> </span><span class="kw">vapply</span>(splist, <span 
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -311,7 +306,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/ropensci/occurrence-manual/edit/master/03-rgbif.Rmd",
+"link": "https://github.com/ropenscilabs/occurrence-manual/edit/master/03-rgbif.Rmd",
 "text": "Edit"
 },
 "history": {
